@@ -24,7 +24,7 @@
             <!-- Nav Item - Edit -->
             <li class="nav-item active">
                 <a class="nav-link" href="/edit">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-folder"></i>
                     <span>Edit Konten</span></a>
             </li>
 
