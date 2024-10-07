@@ -14,7 +14,7 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item active">
                 <a class="nav-link" href="/charts">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts</span></a>
             </li>
 
@@ -34,7 +34,7 @@
              <!-- Nav Item - Table -->
              <li class="nav-item active">
                 <a class="nav-link" href="/historytable">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-table"></i>
                     <span>Tabel Kunjungan</span></a>
             </li>
 
@@ -45,7 +45,7 @@
              <!-- Nav Item - Table -->
              <li class="nav-item active">
                 <a class="nav-link" href="/usertable">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-table"></i>
                     <span>Tabel Pengunjung</span></a>
             </li>
 
@@ -148,9 +148,13 @@
                 <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
                 <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
                 <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
+            </div> -->
+
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-        </ul> -->
+        </ul>
         <!-- End of Sidebar -->
 
 </div>
