@@ -61,7 +61,7 @@
   
                   <!-- email -->
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example4">Email</label>
+                    <label class="form-label" for="form3Example4">Email --</label>
                     <input type="password" id="form3Example4" class="form-control" />
                   </div>
 
