@@ -87,7 +87,7 @@
   
                   <!-- Submit button -->
                   <div class="d-flex d-md-flex justify-content-md-end">
-                    <button class="btn btn-danger me-md-2" type="button">Berikutnya</button>
+                    <button class="btn btn-danger me-md-2" type="button">                    <button class="btn btn-primary" type="button">Button</button>                </button>
                   </div>
   
                   <!-- Register buttons -->
