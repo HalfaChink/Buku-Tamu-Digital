@@ -1,11 +1,7 @@
 <div>
    
         <!-- Sidebar -->
-<<<<<<< HEAD
-        <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
-=======
         <ul class="navbar-nav bg-danger sidebar sidebar-dark accordion" id="accordionSidebar">
->>>>>>> af3bf4e3e906495339cf0e1de47735504e67c97c
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">

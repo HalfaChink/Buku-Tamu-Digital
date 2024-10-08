@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <!-- Custom fonts for this template-->
-     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-     <link
-         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-         rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link
+    href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    rel="stylesheet">
 
-     <!-- Custom styles for this template-->
-    <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
-    <title>Register</title>
+  <title>Register</title>
 </head>
+
 <body>
 
-    <!-- Section: Design Block -->
-<section class="">
+  <!-- Section: Design Block -->
+  <section class="h-100">
     <!-- Jumbotron -->
     <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: rgb(59, 32, 75)">
       <div class="container">
@@ -26,11 +28,11 @@
           <div class="col-lg-6 mb-5 mb-lg-0">
             <img src="" alt="">
           </div>
-  
+
           <div class="col-lg-6 mb-5 mb-lg-0">
             <div class="card">
-              <div class="card-body py-3 px-md-5">
-                {{-- <h1>masukan info pribadi</h1> --}}
+              <div class="card-body py-15 px-md-15">
+                <h1 class="d-flex justify-content-start">Masukan Info Pribadi</h1>
                 <form>
                   <!-- 2 column grid layout with text inputs for the first and last names -->
                   {{-- <div class="row">
@@ -49,34 +51,34 @@
                   </div> --}}
 
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example3">name</label>
+                    <label class="form-label d-flex justify-content-start" for="form3Example3">Nama</label>
                     <input type="email" id="form3Example3" class="form-control" />
                   </div>
-  
+
                   <!-- asal -->
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example3">Asal</label>
+                    <label class="form-label d-flex justify-content-start" for="form3Example3">Asal</label>
                     <input type="email" id="form3Example3" class="form-control" />
                   </div>
-  
+
                   <!-- email -->
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example4">Email</label>
+                    <label class="form-label d-flex justify-content-start" for="form3Example4">Email</label>
                     <input type="password" id="form3Example4" class="form-control" />
                   </div>
 
                   <!-- No tlp -->
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example4">NO.TLP</label>
+                    <label class="form-label d-flex justify-content-start" for="form3Example4">No.Tlp</label>
                     <input type="password" id="form3Example4" class="form-control" />
                   </div>
 
                   <!-- jumlah pengunjung -->
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <label class="form-label" for="form3Example4">Jumlah Pengunjung</label>
+                    <label class="form-label d-flex justify-content-start" for="form3Example4">Jumlah Pengunjung</label>
                     <input type="password" id="form3Example4" class="form-control" />
                   </div>
-  
+
                   <!-- Checkbox -->
                   {{-- <div class="form-check d-flex justify-content-center mb-4">
                     <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
@@ -84,28 +86,32 @@
                       Subscribe to our newsletter
                     </label>
                   </div> --}}
-  
+
                   <!-- Submit button -->
                   <div class="d-flex d-md-flex justify-content-md-end">
                     <button class="btn btn-danger me-md-2" type="button">Berikutnya</button>
                   </div>
-  
+
                   <!-- Register buttons -->
                   {{-- <div class="text-center">
                     <p>or sign up with:</p>
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init
+                      class="btn btn-link btn-floating mx-1">
                       <i class="fab fa-facebook-f"></i>
                     </button> --}}
-  
-                    {{-- <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+
+                    {{-- <button type="button" data-mdb-button-init data-mdb-ripple-init
+                      class="btn btn-link btn-floating mx-1">
                       <i class="fab fa-google"></i>
                     </button>
-  
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init
+                      class="btn btn-link btn-floating mx-1">
                       <i class="fab fa-twitter"></i>
                     </button>
-  
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
+
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init
+                      class="btn btn-link btn-floating mx-1">
                       <i class="fab fa-github"></i>
                     </button> --}}
                   </div>
@@ -120,4 +126,5 @@
   </section>
   <!-- Section: Design Block -->
 </body>
+
 </html>
