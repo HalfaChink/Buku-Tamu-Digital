@@ -28,3 +28,7 @@ Route::get('/usertable', function () {
 Route::get('/register', function () {
     return view('register');
 });
+
+// Route::get('/register2', function () {
+//     return view('register2');
+// });
