@@ -29,6 +29,6 @@ Route::get('/register', function () {
     return view('register');
 });
 
-// Route::get('/register2', function () {
-//     return view('register2');
-// });
+Route::get('/register2', function () {
+    return view('register2');
+});
