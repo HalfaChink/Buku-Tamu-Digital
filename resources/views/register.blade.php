@@ -59,7 +59,7 @@
                   </div> --}}
                   <!-- name -->
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example3">name</label>
+                    <label class="form-label" for="form3Example3">nama</label>
                     <input type="text" id="form3Example3" class="form-control" />
                   </div>
   
