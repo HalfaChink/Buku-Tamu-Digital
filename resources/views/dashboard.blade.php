@@ -10,7 +10,7 @@
 <body>
     <!-- Header -->
     <div>
-
+        <a href="/register">masuk</a>
     </div>
     <!-- End of Header -->
 
@@ -32,8 +32,8 @@
     </div>
     <!-- End of Comment Section -->
 
-     <!-- Bootstrap core JavaScript-->
-     <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ asset('admin/vendor/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 

@@ -2,17 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 Route::get('/', function () {
-    return view('./adminpanel/charts');
+    return view('/dashboard');
 });
 
 Route::get('/charts', function () {
     return view('./adminpanel/charts');
 });
 
-Route::get('/register', function () {
-    return view('/register');
-});
 
 Route::get('/edit', function () {
     return view('./adminpanel/edit');
@@ -24,4 +22,12 @@ Route::get('/historytable', function () {
 
 Route::get('/usertable', function () {
     return view('./adminpanel/usertable');
+});
+
+Route::get('/loginadmin', function () {
+    return view('./adminpanel/loginadmin');
+});
+
+Route::get('/register', function () {
+    return view('/register');
 });
