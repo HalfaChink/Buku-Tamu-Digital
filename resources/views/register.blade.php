@@ -31,7 +31,7 @@
       <div class="container">
         <div class="row gx-lg-5 align-items-center">
           <div class="col-lg-6 mb-5 mb-lg-0 text-center">
-            <img src="{{ asset('admin/img/logo_artristik.png') }}" alt="PT.artristik Studio Bandung" width="500">
+            <img src="{{ asset('admin/img/logotest.png') }}" alt="PT.artristik Studio Bandung" width="500">
           </div>
 
           <div class="col-lg-6 mb-5 mb-lg-0">
@@ -43,7 +43,7 @@
                   <!-- name start-->
                   <div data-mdb-input-init class="form-outline mb-2">
                     <label class="form-label" for="form3Example3">nama</label>
-                    <input type="text" id="form3Example3" class="form-control" />
+                    <input type="text" id="form3Example3" class="form-control" style="border: 2px solid #FF5A5A" />
                   </div>
                   <!-- name end-->
                   <!-- asal start-->
