@@ -11,10 +11,10 @@ Route::get('/charts', function () {
     return view('./adminpanel/charts');
 });
 
-<<<<<<< HEAD
-=======
 // <<<<<<< HEAD
->>>>>>> 9dd77ea129763191aaa19edb55c7b27861f39804
+// =======
+// <<<<<<< HEAD
+// >>>>>>> 9dd77ea129763191aaa19edb55c7b27861f39804
 
 // >>>>>>> refs/remotes/origin/local
 Route::get('/edit', function () {

@@ -36,97 +36,45 @@
 
           <div class="col-lg-6 mb-5 mb-lg-0">
             <div class="card">
-{{-- <<<<<<< HEAD --}}
               <div class="card-body py-4 px-md-5">
                 <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-4">masukan info <br /> pribadi</h1>
-{{-- ======= --}}
 
                 <form>
-                  <!-- 2 column grid layout with text inputs for the first and last names -->
-                  {{-- <div class="row">
-                    <div class="col-md-6 mb-4">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3Example1" class="form-control" />
-                        <label class="form-label" for="form3Example1">First name</label>
-                      </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="form3Example2" class="form-control" />
-                        <label class="form-label" for="form3Example2">Last name</label>
-                      </div>
-                    </div>
-                  </div> --}}
-                  <!-- name -->
+                  <!-- name start-->
                   <div data-mdb-input-init class="form-outline mb-2">
-{{-- <<<<<<< HEAD --}}
                     <label class="form-label" for="form3Example3">nama</label>
                     <input type="text" id="form3Example3" class="form-control" />
                   </div>
-{{-- ======= --}}
-                  <!-- asal -->
+                  <!-- name end-->
+                  <!-- asal start-->
                   <div data-mdb-input-init class="form-outline mb-2">
-{{-- <<<<<<< HEAD --}}
                     <label class="form-label" for="form3Example3">Asal</label>
                     <input type="text" id="form3Example3" class="form-control" />
                   </div>
-{{-- ======= --}}
-                  <!-- email -->
-{{-- <<<<<<< HEAD --}}
+                   <!-- asal end-->
+                  <!-- email start-->
                   <div data-mdb-input-init class="form-outline-danger mb-2">
                     <label class="form-label" for="form3Example4">Email</label>
                     <input type="email" id="form3Example4" class="form-control" />
                   </div>
-{{-- ======= --}}
-{{-- <<<<<<< HEAD --}}
-                  <!-- No tlp -->
+                  <!-- email end-->
+                  <!-- No tlp start -->
                   <div data-mdb-input-init class="form-outline mb-2">
                     <label class="form-label" for="form3Example4">NO.TLP</label>
                     <input type="number" id="form3Example4" class="form-control" />
                   </div>
-{{-- ======= --}}
-{{-- <<<<<<< HEAD --}}
-                  <!-- jumlah pengunjung -->
+                  <!-- No tlp end -->
+                  <!-- jumlah pengunjung start-->
                   <div data-mdb-input-init class="form-outline mb-4">
                     <label class="form-label" for="form3Example4">Jumlah Pengunjung</label>
                     <input type="number" id="form3Example4" class="form-control"/>
                   </div>
-{{-- ======= --}}
-                  <!-- Checkbox -->
-                  {{-- <div class="form-check d-flex justify-content-center mb-4">
-                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                    <label class="form-check-label" for="form2Example33">
-                      Subscribe to our newsletter
-                    </label>
-                  </div> --}}
-
-                  <!-- Submit button -->
+                     <!-- jumlah pengunjung end-->
+                  <!-- Berikutnya button start-->
                   <div class="d-flex d-md-flex justify-content-md-end">
                     <button class="btn me-md-2 text-light font-weight-bold" type="button" style="background-color: rgb(59, 32, 75)">Berikutnya</button>
+                     <!-- Berikutnya button end -->
                   </div>
-
-                  <!-- Register buttons -->
-                  {{-- <div class="text-center">
-                    <p>or sign up with:</p>
-                    <button type="button" data-mdb-button-init data-mdb-ripple-init
-                      class="btn btn-link btn-floating mx-1">
-                      <i class="fab fa-facebook-f"></i>
-                    </button> --}}
-
-                    {{-- <button type="button" data-mdb-button-init data-mdb-ripple-init
-                      class="btn btn-link btn-floating mx-1">
-                      <i class="fab fa-google"></i>
-                    </button>
-
-                    <button type="button" data-mdb-button-init data-mdb-ripple-init
-                      class="btn btn-link btn-floating mx-1">
-                      <i class="fab fa-twitter"></i>
-                    </button>
-
-                    <button type="button" data-mdb-button-init data-mdb-ripple-init
-                      class="btn btn-link btn-floating mx-1">
-                      <i class="fab fa-github"></i>
-                    </button> --}}
                   </div>
                 </form>
               </div>
