@@ -15,7 +15,6 @@
   <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -139,6 +138,9 @@
     <!-- Jumbotron -->
   </section>
   <!-- Section: Design Block -->
-</body>
 
+  {{-- bootstrap --}}
+  <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+</body>
 </html>

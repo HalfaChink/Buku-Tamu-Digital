@@ -36,6 +36,10 @@ Route::get('/register', function () {
     return view('register');
 });
 
+Route::get('/app', function () {    
+    return view('layouts/app');
+});
+
 Route::get('/register2', function () {
     return view('register2');
 
