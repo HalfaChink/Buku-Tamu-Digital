@@ -26,15 +26,14 @@ Route::get('/usertable', function () {
 // register
 Route::get('/register', function () {
     return view('register');
-});
-
-Route::get('/app', function () {    
-    return view('layouts/app');
-});
+})->name('register');
 
 Route::get('/register2', function () {
     return view('register2');
+})->name('register2');
 
+Route::get('/app', function () {    
+    return view('layouts/app');
 });
 
 Route::get('/loginadmin', function () {

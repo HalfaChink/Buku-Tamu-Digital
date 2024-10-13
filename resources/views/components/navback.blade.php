@@ -1,7 +1,8 @@
+
 <div>
-  <nav class="navbar navbar-light">
+  <nav class="navbar navbar-light mb-3">
     <form class="form-inline">
-     <button class="btn bg-light font-weight-bold text-dark" type="button"><i class='bx bx-left-arrow-alt'>kembali</i></button>
+     <button class="btn bg-light" type="button"><i class='bx bx-left-arrow-alt'><a href="{{ route('register') }}" class="text-decoration-none text-dark">Kembali</a></i></button>
     </form>
   </nav>
 </div>
