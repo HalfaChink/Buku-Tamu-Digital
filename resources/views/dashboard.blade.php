@@ -56,35 +56,36 @@
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
                 </div>
-                <div class="carousel-inner">
+                <div class="carousel-inner shadow-lg p-0 m-4 bg-body rounded">
                     <div class="carousel-item active">
-                        <img src="{{ asset('admin/img/logo_artristik.png') }}" class="d-block w-100" alt="...">
+                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('admin/img/logo_artristik.png') }}" class="d-block w-100" alt="...">
+                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('admin/img/logo_artristik.png') }}" class="d-block w-100" alt="...">
+                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="carousel-control-prev-icon bg-black" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="carousel-control-next-icon bg-black" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
             <!-- End of Carousell -->
 
-            <!-- Register -->
-            <a class="btn mx-auto" href="#" role="button" style="background-color: #3b1f4b;">Link</a>
-
-
         </div>
+
+          <!-- Register -->
+          <div class="d-flex align-middle m-5">
+            <a class="btn text-light text-uppercase mx-auto" href="{{ route('register') }}" role="button" style="background-color: #3b1f4b;">berkunjung</a>
+          </div>
 
     </section>
     <!-- End of Header -->
@@ -100,6 +101,12 @@
 
     </div>
     <!-- End of Last History Section -->
+
+    <!--  Footer Section -->
+    <div class="d-flex justify-content-center align-items-center p-5" style="background-color: rgb(59, 32, 75)">
+        <img src="{{ asset('admin/img/logo-header.png') }}" alt="PT.artristik Studio Bandung" width="300">
+    </div>
+    <!--  End of Footer Section -->
 
     <!-- Comment Section -->
     <div>
