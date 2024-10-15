@@ -9,7 +9,47 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('./sass/dashboard.scss') }}">
     <style>
-        #header {}
+        #tabel {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+    }
+
+    #tabel th, #tabel td {
+      padding: 10px;
+      text-align: center;
+      border: 2px solid #3b204b; 
+    }
+
+    #tabel th {
+      background-color: #FF5A5A;
+      color: white;
+    }
+
+    #tabel td {
+      background-color: white; 
+    }
+
+    #tabel th:first-child, #tabel td:first-child {
+      background-color: #FF5A5A; 
+      color: white;
+      width: 10%;
+    }
+
+    #tabel th:nth-child(2), #tabel td:nth-child(2) {
+      width: 45%; 
+    }
+
+    #tabel th:nth-child(3), #tabel td:nth-child(3) {
+      width: 45%; 
+    }
+
+    .comment-card {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid #FF5A5A;
+        }
     </style>
 </head>
 
@@ -18,28 +58,29 @@
     <!-- Header -->
     <section id="header">
 
-        <!-- Navbar  -->
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Buku Tamu</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span>Menu</span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Login Admin</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Kunjungan Hari Ini</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <!-- End of Navbar -->
+<!-- Navbar  -->
+<nav class="navbar navbar-expand-lg" style="background-color: white;">
+  <div class="container-fluid">
+    <a class="navbar-brand text-dark" href="#">Buku Tamu</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="text-dark">Menu</span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-light px-3 py-2" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgb(59, 32, 75); border-radius: 15px;">
+            Menu
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{{ route('loginAdmin') }}">Login Admin</a></li>
+            <li><a class="dropdown-item" href="#">Kunjungan Hari Ini</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- End of Navbar -->
 
         <!-- Hero -->
         <div class="mx-auto">
@@ -91,27 +132,52 @@
 
     <section id="content">
 
-        <div id="hari-ini" class="p-5" style="background-color: #3b1f4b; color: white;">
+        <div id="hari-ini" class="p-5" style="background-color: #3b1f4b; color: #FFB91E;">
             <div class="d-flex justify-content-between">
                 <h2 class=>Kunjungan Hari Ini</h2>
                 <h2 class=>22 September 2077</h2>
             </div>
-            <table class="mx-auto bg-white rounded-3 m-4" style="color: #3b1f4b;">
-                <thead>
-                    <tr>
-                        <th class="col-1 p-5">No</th>
-                        <th class="col-4">Nama</th>
-                        <th class="col-7">Tujuan Kunjungan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th class="p-5"></th>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+            <table id="tabel" class="mx-auto bg-white rounded-3 m-4" style="color: #3b1f4b;">
+            <thead>
+      <tr>
+        <th>No</th>
+        <th>Nama</th>
+        <th>Tujuan Kunjungan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php
+      /*
+      $conn = pg_connect("host=localhost dbname=NGARAN_DATABASE user=postgres password=PASSWORDNA");
+
+    if (!$conn) {
+        die("Koneksi gagal: " . pg_last_error());
+    }
+    $sql = "SELECT id, nama, tujuan_kunjungan FROM tabel_kunjungan";
+    $result = pg_query($conn, $sql);
+
+    if (!$result) {
+        die("Query gagal: " . pg_last_error());
+    }
+
+    if (pg_num_rows($result) > 0) {
+        $no = 1; 
+        while ($row = pg_fetch_assoc($result)) {
+            echo "<tr>";
+            echo "<td>" . $no++ . "</td>"; 
+            echo "<td>" . $row["nama"] . "</td>"; 
+            echo "<td>" . $row["tujuan_kunjungan"] . "</td>"; 
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td colspan='3'>Data tidak tersedia</td></tr>";
+    }
+
+    pg_close($conn);
+      */
+      ?>
+    </tbody>
+  </table>
         </div>
 
         <div id="hari-ini" class="p-5">
@@ -126,6 +192,47 @@
             </table>
         </div>
 
+    </section>
+    <section id="komentar" style="color:#3B1F4B">
+    <div class="container my-5">
+    <h2 class="text-center mb-4">Komentar Pengunjung</h2>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center">
+                    <div class="comment-card">
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit eleifend magna sed pharetra.</p>
+                        <p class="text-right" style="font-weight: bold;">- Ciro Alves</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="comment-card">
+                        <p class="card-text">Mauris ornare lectus sed enim pulvinar, sit amet luctus ante pharetra. Donec pulvinar magna sed justo ullamcorper tempor.</p>
+                        <p class="text-right" style="font-weight: bold;">- Jane Doe</p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="comment-card">
+                        <p class="card-text">Pellentesque luctus nibh mauris, id varius magna pellentesque a. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+                        <p class="text-right" style="font-weight: bold;">- John Smith</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
     </section>
 
     <!--  Footer Section -->
@@ -147,6 +254,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
+        
 
 </body>
 

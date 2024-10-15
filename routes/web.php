@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 // dashboard 
 Route::get('/', function () {
     return view('./pages/dashboard');
-});
+})->name('dashboard');
 // panel admin 
 Route::get('/charts', function () {
     return view('./adminpanel/charts');
@@ -38,4 +38,4 @@ Route::get('/app', function () {
 
 Route::get('/loginadmin', function () {
     return view('./adminpanel/loginadmin');
-});
+})->name('loginAdmin');
