@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('./sass/dashboard.scss') }}">
@@ -201,6 +202,8 @@ pg_close($conn);
         </div>
 
     </section>
+
+
     <section id="komentar" style="color:#3B1F4B">
         <div class="container my-5">
             <h2 class="text-center mb-4">Komentar Pengunjung</h2>
@@ -234,14 +237,16 @@ pg_close($conn);
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#komen"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <button class="carousel-control-prev" type="button" data-bs-target="#komen" data-bs-slide="prev">
+                    <span aria-hidden="true">
+                        <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
+                    </span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#komen"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <button class="carousel-control-next" type="button" data-bs-target="#komen" data-bs-slide="next">
+                    <span aria-hidden="true">
+                        <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
+                    </span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
