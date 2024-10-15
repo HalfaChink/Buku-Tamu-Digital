@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('/dashboard');
+    return view('./pages/dashboard');
 });
 
 Route::get('/charts', function () {
@@ -25,11 +25,11 @@ Route::get('/usertable', function () {
 
 // register
 Route::get('/register', function () {
-    return view('register');
+    return view('./pages/register');
 })->name('register');
 
 Route::get('/register2', function () {
-    return view('register2');
+    return view('./pages/register2');
 })->name('register2');
 
 Route::get('/app', function () {    

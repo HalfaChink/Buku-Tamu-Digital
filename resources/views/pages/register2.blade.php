@@ -33,11 +33,11 @@
           <div class="col-lg-6 mb-5 mb-lg-0">
             <div class="card">
               <div class="card-body py-4 px-md-5 mb-5">
-                <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-4">masukan info <br /> Kunjungan</h1>
+                <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-4">Masukan info <br /> Kunjungan</h1>
                 <form>
                   <!-- name -->
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example3">tujuan kunjungan</label>
+                    <label class="form-label" for="form3Example3">Tujuan Kunjungan</label>
                     <input type="text" id="form3Example3" class="form-control" style="border: 1px solid #FF5A5A" />
                   </div>
   
