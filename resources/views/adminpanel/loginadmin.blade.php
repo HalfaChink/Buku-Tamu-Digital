@@ -20,7 +20,7 @@
 <body>
   <!-- Section: Design Block -->
   <section class="">
-    {{-- <x-navback></x-navback> --}}
+    <x-navback></x-navback>
     <!-- Jumbotron -->
     <div class="px-5 py-2 px-md-5 text-lg-start pt-5" style="background-color: rgb(59, 32, 75); height: 100vh;">
       <div class="container">
