@@ -2,11 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
-
+// dashboard 
 Route::get('/', function () {
     return view('./pages/dashboard');
 });
-
+// panel admin 
 Route::get('/charts', function () {
     return view('./adminpanel/charts');
 });
