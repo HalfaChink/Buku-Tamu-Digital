@@ -10,6 +10,12 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('./sass/dashboard.scss') }}">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            font-family: 'poppins';
+        }
+
         #tabel {
             border-collapse: collapse;
             width: 100%;
@@ -21,6 +27,7 @@
             padding: 10px;
             text-align: center;
             border: 2px solid #3b204b;
+            font-weight: 500;
         }
 
         #tabel th {
@@ -42,11 +49,15 @@
         #tabel th:nth-child(2),
         #tabel td:nth-child(2) {
             width: 45%;
+            background-color: white;
+            color: #3B1F4B;
         }
 
         #tabel th:nth-child(3),
         #tabel td:nth-child(3) {
             width: 45%;
+            background-color: white;
+            color: #3B1F4B;
         }
 
         .comment-card {
@@ -95,34 +106,39 @@
         <div class="mx-auto">
 
             <!-- Carousell -->
-            <div id="carouselExampleIndicators" class="carousel slide w-75 mx-auto ">
+            <div id="carouselExampleIndicators" class="carousel slide mx-auto"
+                style="width: 80%; height: 15%; box-sizing: border-box;">
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                         class="active" aria-current="true" aria-label="Slide 1"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
                         aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    <button type="button" data-bs-target="#carouselExampleIndicators " data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
                 </div>
-                <div class="carousel-inner shadow-lg p-0 m-4 rounded" style="background-color: #3b1f4b;">
+                <div class="carousel-inner shadow-lg p-0 m-4 rounded-3 border">
                     <div class="carousel-item active">
-                        <img src="{{ asset('admin/img/logotest.png') }}" class="d-block mx-auto w-75 p-5" alt="...">
+                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('admin/img/logotest.png') }}" class="d-block mx-auto w-75 p-5" alt="...">
+                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto" alt="...">
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('admin/img/logotest.png') }}" class="d-block mx-auto w-75 p-5" alt="...">
+                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto" alt="...">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span aria-hidden="true">
+                        <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
+                    </span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
                     data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span aria-hidden="true">
+                        <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
+                    </span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
@@ -146,7 +162,7 @@
                 <h2 class=>Kunjungan Hari Ini</h2>
                 <h2 class=>22 September 2077</h2>
             </div>
-            <table id="tabel" class="mx-auto bg-white rounded-3 m-4" style="color: #3b1f4b;">
+            <table id="tabel" class="mx-auto bg-white m-4" style="color: #3b1f4b;">
                 <thead>
                     <tr>
                         <th>No</th>
@@ -210,7 +226,7 @@ pg_close($conn);
             <div id="komen" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="d-flex justify-content-center">
+                        <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
                             <div class="comment-card">
                                 <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
                                     suscipit eleifend magna sed pharetra.</p>
@@ -219,7 +235,7 @@ pg_close($conn);
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="d-flex justify-content-center">
+                        <div class="mx-auto"  style="width: 75%; box-sizing: border-box;">
                             <div class="comment-card">
                                 <p class="card-text">Mauris ornare lectus sed enim pulvinar, sit amet luctus ante
                                     pharetra. Donec pulvinar magna sed justo ullamcorper tempor.</p>
@@ -228,7 +244,7 @@ pg_close($conn);
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="d-flex justify-content-center">
+                        <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
                             <div class="comment-card">
                                 <p class="card-text">Pellentesque luctus nibh mauris, id varius magna pellentesque a.
                                     Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
