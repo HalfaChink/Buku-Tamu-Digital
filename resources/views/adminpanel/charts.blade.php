@@ -1,4 +1,4 @@
-@extends('layout/app')
+@extends('layouts/app')
 
 @section('title')
 Diagram
@@ -16,7 +16,7 @@ Diagram
         <div id="content">
 
             <!-- Begin Page Content -->
-            <div class="container-fluid">
+            <div class="container-fluid bg-white">
 
                 <!-- Page Heading -->
                 <h1 class="h3 mb-2 text-gray-800">Charts</h1>
