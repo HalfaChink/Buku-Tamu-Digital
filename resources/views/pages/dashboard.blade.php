@@ -205,19 +205,58 @@ pg_close($conn);
             </table>
         </div>
 
-        <div id="hari-ini" class="p-5">
+        {{-- <div id="hari-ini" class="p-5">
             <h2>Pengunjung Sebelumnya</h2>
-            <table>
+            <div id="carouselExampleIndicators" class="carousel slide mx-auto"
+                style="width: 50%; height: 10%; box-sizing: border-box;">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators " data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner shadow-lg p-0 m-4 rounded-3 border">
+                    <div class="carousel-item active">
+                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span aria-hidden="true">
+                        <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
+                    </span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span aria-hidden="true">
+                        <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
+                    </span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div> --}}
+
+            {{-- <table>
                 <tr>
                     <th class="p-5">No</th>
                     <th>Tanggal</th>
                     <th>Nama</th>
                     <th>Tujuan Kunjungan</th>
                 </tr>
-            </table>
+            </table> --}}
         </div>
 
     </section>
+
 
 
     <section id="komentar" style="color:#3B1F4B">

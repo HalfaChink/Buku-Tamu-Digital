@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('title')
-Diagram
+Grafik
 @endsection
 
 @section('content')
@@ -30,6 +30,17 @@ Diagram
                         <!-- Bar Chart -->
                         <div class="card shadow mb-4">
                             <div class="card-header">
+                                <h6 class="m-0 font-weight-bold text-primary">Grafik Bulanan</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-bar">
+                                    <canvas id="myBarChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+<!-- 
+                        <div class="card shadow mb-4">
+                            <div class="card-header">
                                 <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
                             </div>
                             <div class="card-body">
@@ -38,6 +49,17 @@ Diagram
                                 </div>
                             </div>
                         </div>
+
+                        <div class="card shadow mb-4">
+                            <div class="card-header">
+                                <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="chart-bar">
+                                    <canvas id="myBarChart"></canvas>
+                                </div>
+                            </div>
+                        </div> -->
 
                     </div>
                 </div>

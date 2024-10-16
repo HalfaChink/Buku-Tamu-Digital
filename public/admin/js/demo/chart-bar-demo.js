@@ -42,7 +42,7 @@ var myBarChart = new Chart(ctx, {
     }],
   },
   options: {
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
     layout: {
       padding: {
         left: 10,
@@ -63,7 +63,7 @@ var myBarChart = new Chart(ctx, {
         ticks: {
           maxTicksLimit: 12
         },
-        maxBarThickness: 50,
+        maxBarThickness: 30,
       }],
       yAxes: [{
         ticks: {
