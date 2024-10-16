@@ -55,7 +55,7 @@
   
                   <!-- Submit button -->
                   <div class="d-flex d-md-flex justify-content-md-end">
-                    <button class="btn me-md-2 text-light font-weight-bold" type="button" style="background-color: rgb(59, 32, 75)">submit</button>
+                    <button class="btn me-md-2 text-light font-weight-bold" type="submit" style="background-color: rgb(59, 32, 75)">submit</button>
                   </div>
 
                   </div>

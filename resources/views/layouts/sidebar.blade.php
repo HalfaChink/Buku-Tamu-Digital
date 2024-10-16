@@ -52,6 +52,16 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+             <!-- Nav Item - Table -->
+             <li class="nav-item active">
+                <a class="nav-link" href="/listadmin">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>List admin</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
             <!-- Heading -->
             <!-- <div class="sidebar-heading">
                 Interface
