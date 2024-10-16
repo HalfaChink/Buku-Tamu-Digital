@@ -31,9 +31,9 @@
 
           <div class="col-lg-6 mb-5 mb-lg-0">
             <div class="card">
-              <div class="card-body py-3 px-md-5">
-                <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-4">login admin</h1>
-                <form>
+              <div class="card-body py-5 px-md-5">
+                <h1 class="text-lg text-uppercase font-weight-bold text-dark ">login admin</h1>
+                <form style="margin-top: 90px;">
                   <!-- name start-->
                   <div data-mdb-input-init class="form-outline mb-2">
                     <label class="form-label" for="form3Example3">username</label>
@@ -49,7 +49,7 @@
                  
                   
                   <!-- Berikutnya button start-->
-                  <div class="d-flex d-md-flex justify-content-md-end">
+                  <div class="d-flex d-md-flex justify-content-md-end pt-5">
                     <button class="btn me-md-2 text-light font-weight-bold" type="button" style="background-color: rgb(59, 32, 75)">login</button>
                      <!-- Berikutnya button end -->
                   </div>

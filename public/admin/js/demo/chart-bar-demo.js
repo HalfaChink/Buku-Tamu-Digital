@@ -32,13 +32,13 @@ var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
+    labels: ["January", "February", "March", "April", "May", "June", "July", "Agustus", "September", "Oktober", "November", "December"],
     datasets: [{
-      label: "Revenue",
+      label: "Pengunjung",
       backgroundColor: "#4e73df",
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
+      data: [4215, 5312, 6251, 7841, 9821, 14984, 500, 300, 200, 1100, 1100, 1200],
     }],
   },
   options: {
@@ -46,7 +46,7 @@ var myBarChart = new Chart(ctx, {
     layout: {
       padding: {
         left: 10,
-        right: 25,
+        right: 100,
         top: 25,
         bottom: 0
       }
@@ -61,9 +61,9 @@ var myBarChart = new Chart(ctx, {
           drawBorder: false
         },
         ticks: {
-          maxTicksLimit: 6
+          maxTicksLimit: 12
         },
-        maxBarThickness: 25,
+        maxBarThickness: 30,
       }],
       yAxes: [{
         ticks: {
