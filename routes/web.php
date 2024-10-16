@@ -22,6 +22,9 @@ Route::get('/historytable', function () {
 Route::get('/usertable', function () {
     return view('./adminpanel/usertable');
 });
+Route::get('/listadmin', function () {
+    return view('./adminpanel/listadmin');
+});
 
 // register
 Route::get('/register', function () {
