@@ -219,74 +219,45 @@ pg_close($conn);
 
     <section id="kunjungan">
         <div class="container mt-5">
-            <h2>Siapa Saja Yang Pernah <br/>Berkunkung</h2>
+            <h2 class="fs-4 fw-bold">Siapa Saja Yang Pernah <br/>Berkunkung</h2>
             <div id="kunjungan" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    <!-- First slide -->
                     <div class="carousel-item active">
-                        <div class="row justify-content-center">
+                        <div class="row justify-content-center my-5">
                             <div class="col-sm-3">
-                                <div class="card">
+                                <div class="card shadow">
                                     <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 1">
-                                    <div class="card-body d-flex">
-                                        <button type="button" class="btn btn-primary px-5 m-2">pt.yadika</button>
-                                        <button type="button" class="btn btn-primary"></button>
+                                    <div class="card-body">
+                                        <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
+                                        <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
                                     </div>
                                 </div>
                             </div>
+                            <div class="carousel-item">
                             <div class="col-sm-3">
-                                <div class="card">
+                                <div class="card shadow">
                                     <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 2">
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-primary px-5 m-2">pt.yadika</button>
-                                        <button type="button" class="btn btn-primary"></button>
+                                        <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
+                                        <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
                                     </div>
                                 </div>
                             </div>
+                           </div>
+                            <div class="carousel-item">
                             <div class="col-sm-3">
-                                <div class="card">
+                                <div class="card shadow">
                                     <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 3">
                                     <div class="card-body">
-                                        <button type="button" class="btn btn-primary px-5 m-2">pt.yadika</button>
-                                        <button type="button" class="btn btn-primary"></button>
+                                        <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
+                                        <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
                                     </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 4">
-                                    <div class="card-body">
-                                        <button type="button" class="btn btn-primary px-5 m-2">pt.yadika</button>
-                                        <button type="button" class="btn btn-primary"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 5">
-                                    <div class="card-body">
-                                        <button type="button" class="btn btn-primary px-5 m-2">pt.yadika</button>
-                                        <button type="button" class="btn btn-primary"></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3">
-                                <div class="card">
-                                    <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 6">
-                                    <div class="card-body">
-                                        <button type="button" class="btn btn-primary px-5 m-2">pt.yadika</button>
-                                        <button type="button" class="btn btn-primary"></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-        
+                </div>
                 <!-- Controls -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#kunjungan" data-bs-slide="prev">
                     <span aria-hidden="true">
@@ -300,7 +271,7 @@ pg_close($conn);
                     </span>
                     <span class="visually-hidden">Next</span>
                 </button>
-            </div>
+        </div>
         </div>
     </section>
 
