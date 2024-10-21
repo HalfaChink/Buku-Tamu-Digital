@@ -205,46 +205,7 @@ pg_close($conn);
             </table>
         </div>
 
-        {{-- <div id="hari-ini" class="p-5">
-            <h2>Pengunjung Sebelumnya</h2>
-            <div id="carouselExampleIndicators" class="carousel slide mx-auto"
-                style="width: 50%; height: 10%; box-sizing: border-box;">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators " data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner shadow-lg p-0 m-4 rounded-3 border">
-                    <div class="carousel-item active">
-                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto" alt="...">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span aria-hidden="true">
-                        <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
-                    </span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span aria-hidden="true">
-                        <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
-                    </span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div> --}}
-
+            
             {{-- <table>
                 <tr>
                     <th class="p-5">No</th>
@@ -253,10 +214,95 @@ pg_close($conn);
                     <th>Tujuan Kunjungan</th>
                 </tr>
             </table> --}}
-        </div>
 
     </section>
 
+    <section id="kunjungan">
+        <div class="container mt-5">
+            <h2>Siapa Saja Yang Pernah <br/>Berkunkung</h2>
+            <div id="kunjungan" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <!-- First slide -->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 1">
+                                    <div class="card-body d-flex">
+                                        <button type="button" class="btn btn-primary px-5 m-2">pt.yadika</button>
+                                        <button type="button" class="btn btn-primary"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 2">
+                                    <div class="card-body">
+                                        <button type="button" class="btn btn-primary px-5 m-2">pt.yadika</button>
+                                        <button type="button" class="btn btn-primary"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 3">
+                                    <div class="card-body">
+                                        <button type="button" class="btn btn-primary px-5 m-2">pt.yadika</button>
+                                        <button type="button" class="btn btn-primary"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 4">
+                                    <div class="card-body">
+                                        <button type="button" class="btn btn-primary px-5 m-2">pt.yadika</button>
+                                        <button type="button" class="btn btn-primary"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 5">
+                                    <div class="card-body">
+                                        <button type="button" class="btn btn-primary px-5 m-2">pt.yadika</button>
+                                        <button type="button" class="btn btn-primary"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="card">
+                                    <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 6">
+                                    <div class="card-body">
+                                        <button type="button" class="btn btn-primary px-5 m-2">pt.yadika</button>
+                                        <button type="button" class="btn btn-primary"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#kunjungan" data-bs-slide="prev">
+                    <span aria-hidden="true">
+                      <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
+                    </span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#kunjungan" data-bs-slide="next">
+                    <span aria-hidden="true">
+                      <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
+                    </span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
 
 
     <section id="komentar" style="color:#3B1F4B">
@@ -267,9 +313,8 @@ pg_close($conn);
                     <div class="carousel-item active">
                         <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
                             <div class="comment-card">
-                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-                                    suscipit eleifend magna sed pharetra.</p>
-                                <p class="text-right" style="font-weight: bold;">- Ciro Alves</p>
+                                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, ea. Non ducimus accusamus earum harum!</p>
+                                <p class="text-right" style="font-weight: bold;">- costa</p>
                             </div>
                         </div>
                     </div>
@@ -326,3 +371,4 @@ pg_close($conn);
 </body>
 
 </html>
+

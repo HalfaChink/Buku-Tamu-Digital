@@ -35,10 +35,10 @@ var myBarChart = new Chart(ctx, {
     labels: ["January", "February", "March", "April", "May", "June", "July", "Agustus", "September", "Oktober", "November", "December"],
     datasets: [{
       label: "Pengunjung",
-      backgroundColor: "#4e73df",
-      hoverBackgroundColor: "#2e59d9",
-      borderColor: "#4e73df",
-      data: [4215, 5312, 6251, 7841, 9821, 14984, 500, 300, 200, 1100, 1100, 1200],
+      backgroundColor: "#ff5a5a",
+      hoverBackgroundColor: "white",
+      borderColor: "#ff5a5a",
+      data: [14, 79, 81, 41, 21, 11, 8, 40, 61, 54, 29, 87],
     }],
   },
   options: {
@@ -68,17 +68,17 @@ var myBarChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 15000,
+          max: 100,
           maxTicksLimit: 5,
           padding: 10,
           // Include a dollar sign in the ticks
           callback: function(value, index, values) {
-            return '$' + number_format(value);
+            return '' + number_format(value);
           }
         },
         gridLines: {
-          color: "rgb(234, 236, 244)",
-          zeroLineColor: "rgb(234, 236, 244)",
+          color: "white",
+          zeroLineColor: "white",
           drawBorder: false,
           borderDash: [2],
           zeroLineBorderDash: [2]
@@ -103,7 +103,7 @@ var myBarChart = new Chart(ctx, {
       callbacks: {
         label: function(tooltipItem, chart) {
           var datasetLabel = chart.datasets[tooltipItem.datasetIndex].label || '';
-          return datasetLabel + ': $' + number_format(tooltipItem.yLabel);
+          return datasetLabel + ': ' + number_format(tooltipItem.yLabel);
         }
       }
     },

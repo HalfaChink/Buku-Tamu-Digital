@@ -30,9 +30,9 @@ Grafik
                         <!-- Bar Chart -->
                         <div class="card shadow mb-4">
                             <div class="card-header">
-                                <h6 class="m-0 font-weight-bold text-primary">Grafik Bulanan</h6>
+                                <h6 class="m-0 font-weight-bold" style="color:#3B1F4B">Grafik Bulanan</h6>
                             </div>
-                            <div class="card-body">
+                            <div class="card-body" style="background-color:#3B1F4B">
                                 <div class="chart-bar">
                                     <canvas id="myBarChart"></canvas>
                                 </div>
