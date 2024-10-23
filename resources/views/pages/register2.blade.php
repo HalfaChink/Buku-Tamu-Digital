@@ -34,32 +34,33 @@
             <div class="card">
               <div class="card-body py-4 px-md-5 mb-5">
                 <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-4">Masukan info <br /> Kunjungan</h1>
-                <form>
-                  <!-- name -->
-                  <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example3">Tujuan Kunjungan</label>
-                    <input type="text" id="form3Example3" class="form-control" style="border: 1px solid #FF5A5A" />
-                  </div>
-  
-                  <!-- asal -->
-                  <div data-mdb-input-init class="form-outline mb-2">
-                    <label for="exampleFormControlTextarea1" class="form-label">Tujuan</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="border: 1px solid #FF5A5A"></textarea>
-                  </div>
-  
-                  <!-- email -->
-                  <div data-mdb-input-init class="form-outline-danger mb-2">
-                    <label for="exampleFormControlTextarea1" class="form-label">Komentar</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="border: 1px solid #FF5A5A"></textarea>
-                  </div>
-  
-                  <!-- Submit button -->
-                  <div class="d-flex d-md-flex justify-content-md-end">
-                    <button class="btn me-md-2 text-light font-weight-bold" type="submit" style="background-color: rgb(59, 32, 75)">submit</button>
-                  </div>
+                <form action="{{ route('kunjungan.store') }}" method="POST">
+    @csrf
+    <!-- name -->
+    <div data-mdb-input-init class="form-outline mb-2">
+        <label class="form-label" for="form3Example3">Tujuan Kunjungan</label>
+        <input type="text" name="tujuan" id="form3Example3" class="form-control" style="border: 1px solid #FF5A5A" required />
+    </div>
 
-                  </div>
-                </form>
+    <!-- tujuan -->
+    <div data-mdb-input-init class="form-outline mb-2">
+        <label for="exampleFormControlTextarea1" class="form-label">Tujuan</label>
+        <textarea class="form-control" name="tujuan_detail" id="exampleFormControlTextarea1" rows="3" style="border: 1px solid #FF5A5A" required></textarea>
+    </div>
+
+    <!-- komentar -->
+    <div data-mdb-input-init class="form-outline-danger mb-2">
+        <label for="exampleFormControlTextarea1" class="form-label">Komentar</label>
+        <textarea class="form-control" name="komentar" id="exampleFormControlTextarea1" rows="3" style="border: 1px solid #FF5A5A" required></textarea>
+    </div>
+
+    <!-- Submit button -->
+    <div class="d-flex d-md-flex justify-content-md-end">
+        <button class="btn me-md-2 text-light font-weight-bold" type="submit" style="background-color: rgb(59, 32, 75)">Submit</button>
+    </div>
+</div>
+</form>
+
               </div>
             </div>
             <div class="col-lg-6 mb-5 mb-lg-0 text-center">

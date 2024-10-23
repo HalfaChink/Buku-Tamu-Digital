@@ -32,7 +32,7 @@ Sejarah Kunjungan
                             </tr>
                         </thead>
                         <tbody>
-{{-- 
+
 @foreach($dataPerjalanan as $kunjungan)
 <tr>
     <td>{{ $kunjungan->id }}</td>
@@ -41,7 +41,7 @@ Sejarah Kunjungan
     <td>{{ $kunjungan->komentar }}</td>
 </tr>
 @endforeach
---}}
+
                         </tbody>
                     </table>
                 </div>

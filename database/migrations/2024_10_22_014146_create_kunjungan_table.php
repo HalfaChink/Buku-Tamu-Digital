@@ -10,11 +10,11 @@ class CreateKunjunganTable extends Migration
     {
         Schema::create('kunjungan', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal');
             $table->string('tujuan');
-            $table->text('komentar')->nullable();
+            $table->text('tujuan_detail');
+            $table->text('komentar');
             $table->timestamps();
-        });
+        });        
     }
 
     public function down()

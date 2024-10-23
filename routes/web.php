@@ -1,11 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\KunjunganController;
+
+Route::post('/kunjungan', [KunjunganController::class, 'store'])->name('kunjungan.store');
+
+Route::get('/historytable', [KunjunganController::class, 'index']);
 
 // dashboard 
 Route::get('/', function () {
     return view('./pages/dashboard');
 })->name('dashboard');
+
 // panel admin 
 Route::get('/charts', function () {
     return view('./adminpanel/charts');
@@ -15,13 +21,10 @@ Route::get('/edit', function () {
     return view('./adminpanel/edit');
 });
 
-Route::get('/historytable', function () {
-    return view('./adminpanel/historytable');
-});
-
 Route::get('/usertable', function () {
     return view('./adminpanel/usertable');
 });
+
 Route::get('/listadmin', function () {
     return view('./adminpanel/listadmin');
 });
