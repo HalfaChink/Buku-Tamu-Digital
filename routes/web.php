@@ -7,6 +7,11 @@ Route::post('/kunjungan', [KunjunganController::class, 'store'])->name('kunjunga
 
 Route::get('/historytable', [KunjunganController::class, 'index']);
 
+
+Route::get('/', function () {
+    return view('welcome');
+});
+=======
 // dashboard 
 Route::get('/', function () {
     return view('./pages/dashboard');
@@ -45,3 +50,4 @@ Route::get('/app', function () {
 Route::get('/loginadmin', function () {
     return view('./adminpanel/loginadmin');
 })->name('loginAdmin');
+
