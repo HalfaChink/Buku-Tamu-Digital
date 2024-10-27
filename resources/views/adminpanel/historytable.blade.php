@@ -33,14 +33,14 @@ Sejarah Kunjungan
                         </thead>
                         <tbody>
 
-@foreach($dataPerjalanan as $kunjungan)
-<tr>
-    <td>{{ $kunjungan->id }}</td>
-    <td>{{ $kunjungan->tanggal }}</td>
-    <td>{{ $kunjungan->tujuan }}</td>
-    <td>{{ $kunjungan->komentar }}</td>
-</tr>
-@endforeach
+                            @foreach($dataPerjalanan as $kunjungan)
+                            <tr>
+                                <td>{{ $kunjungan->id }}</td>
+                                <td>{{ $kunjungan->tanggal }}</td>
+                                <td>{{ $kunjungan->tujuan }}</td>
+                                <td>{{ $kunjungan->komentar }}</td>
+                            </tr>
+                            @endforeach
 
                         </tbody>
                     </table>

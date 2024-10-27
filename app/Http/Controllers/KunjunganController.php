@@ -5,30 +5,27 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kunjungan;
 
+
 class KunjunganController extends Controller
 {
-    public function index()
+    public function history()
     {
         $dataPerjalanan = Kunjungan::all();
 
         return view('adminpanel.historytable', compact('dataPerjalanan'));
     }
 
+
     public function store(Request $request)
     {
-        $request->validate([
+        $validatedData = $request->validate([
             'tujuan' => 'required|string|max:255',
-            'tujuan_detail' => 'required|string|max:255',
-            'komentar' => 'required|string|max:1000',
-        ]);        
-
-        Kunjungan::create([
-            'tujuan' => $request->tujuan,
-            'tujuan_detail' => $request->tujuan_detail,
-            'komentar' => $request->komentar,
-            'tanggal' => now()->toDateString(),
+            'tujuan_detail' => 'required|string',
+            'komentar' => 'required|string',
         ]);
 
-        return redirect()->back()->with('success', 'Data kunjungan berhasil disimpan!');
+        Kunjungan::create($validatedData);
+
+        return redirect()->route('historytable')->with('success', 'Kunjungan berhasil dicatat!');
     }
 }
