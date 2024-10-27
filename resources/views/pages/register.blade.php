@@ -32,7 +32,7 @@
           <div class="col-lg-6 mb-5 mb-lg-0">
             <div class="card">
               <div class="card-body py-3 px-md-5">
-                <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-4">masukan info <br />pribadi</h1>
+                <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-5">masukan info <br />pribadi</h1>
                 <form>
                   <!-- name start-->
                   <div data-mdb-input-init class="form-outline mb-2">
