@@ -63,7 +63,7 @@
 
               </div>
             </div>
-            <div class="col-lg-6 mb-5 mb-lg-0 text-center">
+            <div class="col-lg-6 d-lg-block d-md-block d-none mb-5 mb-lg-0 text-center">
               <img src="{{ asset('admin/img/logotest.png') }}" alt="PT.artristik Studio Bandung" width="400">
             </div>
           </div>
