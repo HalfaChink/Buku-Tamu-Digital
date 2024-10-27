@@ -75,10 +75,10 @@
     <section id="header">
 
         <!-- Navbar  -->
-        <nav class="navbar navbar-expand-lg" style="background-color: white;">
-            <div class="container-fluid">
-                <a class="navbar-brand text-dark" href="#">Buku Tamu</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        <nav class="navbar navbar-expand-lg p-3" style="background-color: white;">
+            <div class="container-fluid border-1 border-bottom py-2">
+                <h1 class="navbar-brand text-dark fs-4">Buku Tamu</h1>
+                <button class="navbar-toggler rounded-sm" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="text-dark">Menu</span>
@@ -93,14 +93,13 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="{{ route('loginAdmin') }}">Login Admin</a></li>
-                                <li><a class="dropdown-item" href="#">Kunjungan Hari Ini</a></li>
+                                <li><a class="dropdown-item" href="#content">Kunjungan Hari Ini</a></li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
-        <!-- End of Navbar -->
 
         <!-- Hero -->
         <div class="mx-auto">
@@ -147,14 +146,16 @@
         </div>
 
         <!-- Register -->
-        <div class="d-flex align-middle m-5">
-            <a class="btn text-light text-uppercase mx-auto" href="{{ route('register') }}" role="button"
-                style="background-color: #3b1f4b;">berkunjung</a>
+        <div class="d-flex justify-content-center m-5">
+            <a class="btn text-light" href="{{ route('register') }}" role="button"
+                style="background-color: #3b1f4b;">
+                <h3 class=" fs-5">Berkunjung</h3>
+            </a>
         </div>
 
     </section>
-    <!-- End of Header -->
 
+    <!-- Content -->
     <section id="content">
 
         <div id="hari-ini" class="p-5" style="background-color: #3b1f4b; color: #FFB91E;">
@@ -175,22 +176,8 @@
                     </tbody>
                 </table>
             </div>
-
         </div>
 
-
-        {{-- <table>
-                <tr>
-                    <th class="p-5">No</th>
-                    <th>Tanggal</th>
-                    <th>Nama</th>
-                    <th>Tujuan Kunjungan</th>
-                </tr>
-            </table> --}}
-
-    </section>
-
-    <section id="kunjungan">
         <div class="container mt-5">
             <h2 class="fs-4 fw-bold">Siapa Saja Yang Pernah <br />Berkunkung</h2>
             <div id="kunjungan" class="carousel slide" data-ride="carousel">
@@ -242,10 +229,7 @@
                 </button>
             </div>
         </div>
-    </section>
 
-
-    <section id="komentar" style="color:#3B1F4B">
         <div class="container my-5">
             <h2 class="text-center mb-4">Komentar Pengunjung</h2>
             <div id="komen" class="carousel slide" data-bs-ride="carousel">
@@ -291,13 +275,15 @@
                 </button>
             </div>
         </div>
+
     </section>
 
-    <!--  Footer Section -->
-    <div class="d-flex justify-content-center align-items-center p-5" style="background-color: rgb(59, 32, 75)">
-        <img src="{{ asset('admin/img/logo-header.png') }}" alt="PT.artristik Studio Bandung" width="300">
-    </div>
-    <!--  End of Footer Section -->
+    <!--  Footer -->
+    <section id="footer">
+        <div class="d-flex justify-content-center align-items-center p-5" style="background-color: rgb(59, 32, 75)">
+            <img src="{{ asset('admin/img/logo-header.png') }}" alt="PT.artristik Studio Bandung" width="300">
+        </div>
+    </section>
 
     <!-- Bootstrap core JavaScript-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
