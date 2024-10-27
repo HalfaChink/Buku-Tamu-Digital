@@ -101,15 +101,10 @@
             </div>
         </nav>
 
-<<<<<<< HEAD
         <!-- Hero -->
         <div class="container">
 
             <!-- Carousell -->
-=======
-        <!-- Carousel -->
-        <div class="mx-auto">
->>>>>>> origin/Baru
             <div id="carouselExampleIndicators" class="carousel slide mx-auto"
                 style="width: 80%; height: 15%; box-sizing: border-box;">
                 <div class="carousel-indicators">
@@ -150,14 +145,9 @@
 
         <!-- Register -->
         <div class="d-flex justify-content-center m-5">
-<<<<<<< HEAD
             <a class="btn text-light" href="{{ route('register') }}" role="button"
                 style="background-color: #3b1f4b;">
                 <h3 class="fs-5">Berkunjung</h3>
-=======
-            <a class="btn text-light fw-medium fs-5" href="{{ route('register') }}" role="button"
-                style="background-color: #3b1f4b;">Berkunjung
->>>>>>> origin/Baru
             </a>
         </div>
 

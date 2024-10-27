@@ -34,14 +34,8 @@
           <div class="col-lg-6 mb-5 mb-lg-0">
             <div class="card">
               <div class="card-body py-3 px-md-5">
-<<<<<<< HEAD
                 <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-4">masukan info <br />pribadi</h1>
                 <form>
-=======
-                <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-4">masukan info <i class='bx bx-child' style="font-size: 25px;"></i> <br />pribadi</h1>
-                <form action="{{ route('pengunjung.store') }}" method="POST">
-                  @csrf
->>>>>>> origin/Baru
                   <!-- name start-->
                   <div data-mdb-input-init class="form-outline mb-2">
                     <label class="form-label" for="nama">Nama</label>
