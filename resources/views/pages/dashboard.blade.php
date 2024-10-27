@@ -75,10 +75,10 @@
     <section id="header">
 
         <!-- Navbar  -->
-        <nav class="navbar navbar-expand-lg p-3" style="background-color: white;">
+        <nav class="navbar navbar-expand-lg p-3">
             <div class="container-fluid border-1 border-bottom py-2">
                 <h1 class="navbar-brand text-dark fs-4">Buku Tamu</h1>
-                <button class="navbar-toggler rounded-sm" type="button" data-bs-toggle="collapse"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="text-dark">Menu</span>
@@ -101,10 +101,15 @@
             </div>
         </nav>
 
+<<<<<<< HEAD
         <!-- Hero -->
         <div class="container">
 
             <!-- Carousell -->
+=======
+        <!-- Carousel -->
+        <div class="mx-auto">
+>>>>>>> origin/Baru
             <div id="carouselExampleIndicators" class="carousel slide mx-auto"
                 style="width: 80%; height: 15%; box-sizing: border-box;">
                 <div class="carousel-indicators">
@@ -141,15 +146,18 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-            <!-- End of Carousell -->
-
         </div>
 
         <!-- Register -->
         <div class="d-flex justify-content-center m-5">
+<<<<<<< HEAD
             <a class="btn text-light" href="{{ route('register') }}" role="button"
                 style="background-color: #3b1f4b;">
                 <h3 class="fs-5">Berkunjung</h3>
+=======
+            <a class="btn text-light fw-medium fs-5" href="{{ route('register') }}" role="button"
+                style="background-color: #3b1f4b;">Berkunjung
+>>>>>>> origin/Baru
             </a>
         </div>
 
@@ -158,11 +166,12 @@
     <!-- Content -->
     <section id="content">
 
+        <!-- Kunjungan hari ini -->
         <div id="hari-ini" class="p-5" style="background-color: #3b1f4b; color: #FFB91E;">
-            <div class="container ">
-                <div class="d-flex justify-content-between">
-                    <h2 class="fs-4 fw-bold">Kunjungan Hari Ini</h2>
-                    <h2 class="fs-4 fw-bold">22 September 2077</h2>
+            <div class="container">
+                <div class="d-flex fs-4 justify-content-between ">
+                    <p class="fw-bold">Kunjungan Hari Ini</p>
+                    <p class="fw-bold">22 September 2077</p>
                 </div>
                 <table id="tabel" class="mx-auto bg-white m-4" style="color: #3b1f4b;">
                     <thead>
@@ -178,6 +187,7 @@
             </div>
         </div>
 
+        <!-- Kunjungan sebelumnya -->
         <div class="container mt-5">
             <h2 class="fs-4 fw-bold">Siapa Saja Yang Pernah <br />Berkunjung</h2>
             <div id="kunjungan" class="carousel slide" data-ride="carousel">
@@ -230,6 +240,7 @@
             </div>
         </div>
 
+        <!-- Komentar -->
         <div class="container my-5">
             <h2 class="text-center mb-4">Komentar Pengunjung</h2>
             <div id="komen" class="carousel slide" data-bs-ride="carousel">
@@ -285,14 +296,12 @@
         </div>
     </section>
 
-    <!-- Bootstrap core JavaScript-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
-
 
 </body>
 

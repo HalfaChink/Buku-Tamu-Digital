@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="en" class="overflow-hidden">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-   <!-- Custom fonts for this template-->
-   <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <!-- Custom styles for this template-->
-    <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <!-- box icons -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Registrasi</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Custom fonts for this template-->
+  <link href="{{ asset('admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
+  <!-- box icons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Registrasi</title>
 
 </head>
+
 <body>
   <!-- Section: Design Block -->
   <section class="">
@@ -32,50 +34,56 @@
           <div class="col-lg-6 mb-5 mb-lg-0">
             <div class="card">
               <div class="card-body py-3 px-md-5">
+<<<<<<< HEAD
                 <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-4">masukan info <br />pribadi</h1>
                 <form>
+=======
+                <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-4">masukan info <i class='bx bx-child' style="font-size: 25px;"></i> <br />pribadi</h1>
+                <form action="{{ route('pengunjung.store') }}" method="POST">
+                  @csrf
+>>>>>>> origin/Baru
                   <!-- name start-->
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example3">Nama</label>
-                    <input type="text" id="form3Example3" class="form-control" style="border: 1px solid #FF5A5A" />
+                    <label class="form-label" for="nama">Nama</label>
+                    <input type="text" name="nama" id="nama" class="form-control" style="border: 1px solid #FF5A5A" required />
                   </div>
                   <!-- name end-->
                   <!-- asal start-->
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example3">Asal</label>
-                    <input type="text" id="form3Example3" class="form-control" style="border: 1px solid #FF5A5A"/>
+                    <label class="form-label" for="asal">Asal</label>
+                    <input type="text" name="asal" id="asal" class="form-control" style="border: 1px solid #FF5A5A" required />
                   </div>
-                   <!-- asal end-->
+                  <!-- asal end-->
                   <!-- email start-->
                   <div data-mdb-input-init class="form-outline-danger mb-2">
-                    <label class="form-label" for="form3Example4">Email</label>
-                    <input type="email" id="form3Example4" class="form-control" style="border: 1px solid #FF5A5A"/>
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" style="border: 1px solid #FF5A5A" required />
                   </div>
                   <!-- email end-->
                   <!-- No tlp start -->
                   <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example4">NO.TLP</label>
-                    <input type="number" id="form3Example4" class="form-control" style="border: 1px solid #FF5A5A "/>
+                    <label class="form-label" for="no_tlp">NO.TLP</label>
+                    <input type="number" name="no_tlp" id="no_tlp" class="form-control" style="border: 1px solid #FF5A5A " required />
                   </div>
                   <!-- No tlp end -->
                   <!-- jumlah pengunjung start-->
                   <div data-mdb-input-init class="form-outline mb-4">
-                    <label class="form-label" for="form3Example4">Jumlah Pengunjung</label>
-                    <input type="number" id="form3Example4" class="form-control" style="border: 1px solid #FF5A5A"/>
+                    <label class="form-label" for="jumlah_pengunjung">Jumlah Pengunjung</label>
+                    <input type="number" name="jumlah_pengunjung" id="jumlah_pengunjung" class="form-control" style="border: 1px solid #FF5A5A" required />
                   </div>
-                     <!-- jumlah pengunjung end-->
+                  <!-- jumlah pengunjung end-->
                   <!-- Berikutnya button start-->
                   <div class="d-flex d-md-flex justify-content-md-end">
-                    <button class="btn me-md-2 text-light font-weight-bold" type="button" style="background-color: rgb(59, 32, 75)"><a href="{{ route('register2') }}" class="text-decoration-none text-light">Berikutnya</a></button>
-                     <!-- Berikutnya button end -->
+                    <button class="btn me-md-2 text-light font-weight-bold" type="submit" style="background-color: rgb(59, 32, 75)"><a href="{{ route('register2') }}" class="text-decoration-none text-light">Berikutnya</a></button>
+                    <!-- Berikutnya button end -->
                   </div>
-                  </div>
-                </form>
               </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
     <!-- Jumbotron -->
   </section>
@@ -85,4 +93,5 @@
   <script src="{{ asset('admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 </body>
+
 </html>

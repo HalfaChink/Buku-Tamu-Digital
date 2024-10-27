@@ -12,13 +12,13 @@ class Kunjungan extends Model
     protected $table = 'kunjungan';
 
     protected $fillable = [
-        'tujuan', 
-        'tujuan_detail', 
-        'komentar', 
-        'tanggal', 
-        'created_at', 
+        'tujuan',
+        'tujuan_detail',
+        'komentar',
+        'tanggal',
+        'created_at',
         'updated_at'
     ];
 
-    public $timestamps = true; 
+    public $timestamps = true;
 }

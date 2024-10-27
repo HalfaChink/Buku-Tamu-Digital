@@ -2,10 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KunjunganController;
+use App\Http\Controllers\UserController;
 
-Route::post('/kunjungan', [KunjunganController::class, 'store'])->name('kunjungan.store');
+Route::get('/historytable', [KunjunganController::class, 'history'])->name('historytable');
 
-Route::get('/historytable', [KunjunganController::class, 'index']);
+Route::get('/usertable', [UserController::class, 'index']);
+
+Route::post('/pengunjung/store', [UserController::class, 'store'])->name('pengunjung.store');
+Route::post('/kunjungan/store', [KunjunganController::class, 'store'])->name('kunjungan.store');
+
 
 // dashboard 
 Route::get('/', function () {
@@ -21,10 +26,6 @@ Route::get('/edit', function () {
     return view('./adminpanel/edit');
 });
 
-Route::get('/usertable', function () {
-    return view('./adminpanel/usertable');
-});
-
 Route::get('/listadmin', function () {
     return view('./adminpanel/listadmin');
 });
@@ -38,7 +39,7 @@ Route::get('/register2', function () {
     return view('./pages/register2');
 })->name('register2');
 
-Route::get('/app', function () {    
+Route::get('/app', function () {
     return view('layouts/app');
 });
 
