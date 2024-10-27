@@ -158,55 +158,28 @@
     <section id="content">
 
         <div id="hari-ini" class="p-5" style="background-color: #3b1f4b; color: #FFB91E;">
-            <div class="d-flex justify-content-between">
-                <h2 class=>Kunjungan Hari Ini</h2>
-                <h2 class=>22 September 2077</h2>
+            <div class="container ">
+                <div class="d-flex justify-content-between">
+                    <h2 class="fs-4 fw-bold">Kunjungan Hari Ini</h2>
+                    <h2 class="fs-4 fw-bold">22 September 2077</h2>
+                </div>
+                <table id="tabel" class="mx-auto bg-white m-4" style="color: #3b1f4b;">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Nama</th>
+                            <th>Tujuan Kunjungan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
             </div>
-            <table id="tabel" class="mx-auto bg-white m-4" style="color: #3b1f4b;">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Tujuan Kunjungan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-/*
-$conn = pg_connect("host=localhost dbname=NGARAN_DATABASE user=postgres password=PASSWORDNA");
 
-if (!$conn) {
-  die("Koneksi gagal: " . pg_last_error());
-}
-$sql = "SELECT id, nama, tujuan_kunjungan FROM tabel_kunjungan";
-$result = pg_query($conn, $sql);
-
-if (!$result) {
-  die("Query gagal: " . pg_last_error());
-}
-
-if (pg_num_rows($result) > 0) {
-  $no = 1; 
-  while ($row = pg_fetch_assoc($result)) {
-      echo "<tr>";
-      echo "<td>" . $no++ . "</td>"; 
-      echo "<td>" . $row["nama"] . "</td>"; 
-      echo "<td>" . $row["tujuan_kunjungan"] . "</td>"; 
-      echo "</tr>";
-  }
-} else {
-  echo "<tr><td colspan='3'>Data tidak tersedia</td></tr>";
-}
-
-pg_close($conn);
-*/
-      ?>
-                </tbody>
-            </table>
         </div>
 
-            
-            {{-- <table>
+
+        {{-- <table>
                 <tr>
                     <th class="p-5">No</th>
                     <th>Tanggal</th>
@@ -219,11 +192,11 @@ pg_close($conn);
 
     <section id="kunjungan">
         <div class="container mt-5">
-            <h2 class="fs-4 fw-bold">Siapa Saja Yang Pernah <br/>Berkunkung</h2>
+            <h2 class="fs-4 fw-bold">Siapa Saja Yang Pernah <br />Berkunkung</h2>
             <div id="kunjungan" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <div class="row justify-content-center my-5">
+                        <div class="row justify-content-center my-3">
                             <div class="col-sm-3">
                                 <div class="card shadow">
                                     <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 1">
@@ -250,24 +223,24 @@ pg_close($conn);
                                         <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
                                     </div>
                                 </div>
-                                </div>
+                            </div>
                         </div>
-                </div>
+                    </div>
                 </div>
                 <!-- Controls -->
                 <button class="carousel-control-prev" type="button" data-bs-target="#kunjungan" data-bs-slide="prev">
                     <span aria-hidden="true">
-                      <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
+                        <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
                     </span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#kunjungan" data-bs-slide="next">
                     <span aria-hidden="true">
-                      <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
+                        <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
                     </span>
                     <span class="visually-hidden">Next</span>
                 </button>
-        </div>
+            </div>
         </div>
     </section>
 
@@ -286,7 +259,7 @@ pg_close($conn);
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <div class="mx-auto"  style="width: 75%; box-sizing: border-box;">
+                        <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
                             <div class="comment-card">
                                 <p class="card-text">Mauris ornare lectus sed enim pulvinar, sit amet luctus ante
                                     pharetra. Donec pulvinar magna sed justo ullamcorper tempor.</p>
@@ -338,4 +311,3 @@ pg_close($conn);
 </body>
 
 </html>
-
