@@ -23,10 +23,7 @@ Grafik
 
                 <!-- Content Row -->
                 <div>
-
                     <div>
-
-
                         <!-- Bar Chart -->
                         <div class="card shadow mb-4">
                             <div class="card-header">
@@ -38,29 +35,6 @@ Grafik
                                 </div>
                             </div>
                         </div>
-<!-- 
-                        <div class="card shadow mb-4">
-                            <div class="card-header">
-                                <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="chart-bar">
-                                    <canvas id="myBarChart"></canvas>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card shadow mb-4">
-                            <div class="card-header">
-                                <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
-                            </div>
-                            <div class="card-body">
-                                <div class="chart-bar">
-                                    <canvas id="myBarChart"></canvas>
-                                </div>
-                            </div>
-                        </div> -->
-
                     </div>
                 </div>
 
