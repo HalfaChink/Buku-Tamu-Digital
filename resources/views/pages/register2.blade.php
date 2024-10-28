@@ -32,7 +32,7 @@
     <div class="px-5 py-4 px-md-5 text-lg-start" style="background-color: rgb(59, 32, 75); height: 100vh;">
       <div class="container">
         <div class="row gx-lg-5 align-items-center">
-          <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="col-lg-6 mb-5 mb-lg-0 ">
             <div class="card">
               <div class="card-body py-4 px-md-5 mb-5">
                 <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-4">Masukan info <br /> Kunjungan</h1>
@@ -65,7 +65,7 @@
 
             </div>
           </div>
-          <div class="col-lg-6 mb-5 mb-lg-0 text-center">
+          <div class="col-lg-6 d-lg-block d-none mb-5 mb-lg-0 text-center">
             <img src="{{ asset('admin/img/logotest.png') }}" alt="PT.artristik Studio Bandung" width="400">
           </div>
         </div>
