@@ -61,7 +61,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="/listadmin">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>List admin</span></a>
+                    <span>Daftar Akun</span></a>
             </li>
             <hr class="sidebar-divider">
             <div class="text-center d-none d-md-inline">
@@ -104,7 +104,7 @@
     <footer class="sticky-footer bg-white">
         <div class="container my-auto">
             <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Your Website 2020</span>
+                <span></span>
             </div>
         </div>
     </footer>
