@@ -6,10 +6,12 @@ use App\Http\Controllers\UserController;
 
 Route::get('/historytable', [KunjunganController::class, 'history'])->name('historytable');
 
-Route::get('/usertable', [UserController::class, 'index']);
+Route::get('/usertable', [UserController::class, 'index'])->name('usertable');
 
 Route::post('/pengunjung/store', [UserController::class, 'store'])->name('pengunjung.store');
 Route::post('/kunjungan/store', [KunjunganController::class, 'store'])->name('kunjungan.store');
+Route::get('/chart-data', [UserController::class, 'chartData'])->name('chart.data');
+
 
 
 // dashboard 

@@ -35,7 +35,8 @@
             <div class="card">
               <div class="card-body py-3 px-md-5">
                 <h1 class="text-lg text-uppercase font-weight-bold text-dark mb-4">masukan info <br />pribadi</h1>
-                <form>
+                <form action="{{ route('pengunjung.store') }}" method="POST">
+                  @csrf
                   <!-- name start-->
                   <div data-mdb-input-init class="form-outline mb-2">
                     <label class="form-label" for="nama">Nama</label>
@@ -68,7 +69,7 @@
                   <!-- jumlah pengunjung end-->
                   <!-- Berikutnya button start-->
                   <div class="d-flex d-md-flex justify-content-md-end">
-                    <button class="btn me-md-2 text-light font-weight-bold" type="submit" style="background-color: rgb(59, 32, 75)"><a href="{{ route('register2') }}" class="text-decoration-none text-light">Berikutnya</a></button>
+                    <button class="btn me-md-2 text-light font-weight-bold" type="submit" style="background-color: rgb(59, 32, 75)"><a class="text-decoration-none text-light">Berikutnya</a></button>
                     <!-- Berikutnya button end -->
                   </div>
               </div>

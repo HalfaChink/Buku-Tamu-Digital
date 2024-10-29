@@ -75,14 +75,12 @@
     <!-- Jumbotron -->
   </section>
   <!-- Section: Design Block -->
-  @if(session('success'))
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      alert("{{ session('success') }}"); // Pop-up alert sederhana
-    });
-  </script>
+  @if (session('success'))
+  <div class="alert alert-success">
+    {{ session('success') }}
+  </div>
   @endif
+
 </body>
 
 </html>
-{{-- coment --}}s

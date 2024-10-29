@@ -26,6 +26,6 @@ class KunjunganController extends Controller
 
         Kunjungan::create($validatedData);
 
-        return redirect()->route('historytable')->with('success', 'Kunjungan berhasil dicatat!');
+        return redirect()->route('dashboard')->with('success', 'Kunjungan berhasil dicatat!');
     }
 }

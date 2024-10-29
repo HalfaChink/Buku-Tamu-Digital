@@ -4,9 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pengunjung;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
+    public function chartData()
+    {
+        $pengunjungPerBulan = Pengunjung::selectRaw("MONTH(created_at) as month, COUNT(*) as total")
+            ->groupBy('month')
+            ->pluck('total', 'month')
+            ->toArray();
+
+        $data = [];
+        for ($i = 1; $i <= 12; $i++) {
+            $data[] = $pengunjungPerBulan[$i] ?? 0;
+        }
+
+        return response()->json($data);
+    }
     public function index()
     {
         $dataPengunjung = Pengunjung::all();
@@ -25,6 +40,6 @@ class UserController extends Controller
 
         Pengunjung::create($validatedData);
 
-        return redirect()->route('usertable')->with('success', 'Data berhasil disimpan!');
+        return redirect()->route('register2')->with('success', 'Data berhasil disimpan!');
     }
 }
