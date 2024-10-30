@@ -60,7 +60,7 @@
             <hr class="sidebar-divider">
             <li class="nav-item active">
                 <a class="nav-link" href="/listadmin">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-user"></i>
                     <span>Daftar Akun</span></a>
             </li>
             <hr class="sidebar-divider">
