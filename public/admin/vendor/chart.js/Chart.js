@@ -1057,17 +1057,6 @@ var conversions_13 = conversions.hcg;
 var conversions_14 = conversions.apple;
 var conversions_15 = conversions.gray;
 
-/*
-	this function routes a model to all other models.
-
-	all functions that are routed have a property `.conversion` attached
-	to the returned synthetic function. This property is an array
-	of strings, each with the steps in between the 'from' and 'to'
-	color models (inclusive).
-
-	conversions that are not possible simply are not included.
-*/
-
 function buildGraph() {
 	var graph = {};
 	// https://jsperf.com/object-keys-vs-for-in-with-closure/3
@@ -3802,12 +3791,9 @@ helpers$1.extend(DatasetController.prototype, {
 		var dataset = me.getDataset();
 		var data = dataset.data || (dataset.data = []);
 
-		// In order to correctly handle data addition/deletion animation (an thus simulate
-		// real-time charts), we need to monitor these data modifications and synchronize
-		// the internal meta data accordingly.
 		if (me._data !== data) {
 			if (me._data) {
-				// This case happens when the user replaced the data array instance.
+
 				unlistenArrayEvents(me._data, me);
 			}
 
@@ -3817,8 +3803,7 @@ helpers$1.extend(DatasetController.prototype, {
 			me._data = data;
 		}
 
-		// Re-sync meta data in case the user replaced the data array or if we missed
-		// any updates and so make sure that we handle number of datapoints changing.
+
 		me.resyncElements();
 	},
 
@@ -3919,7 +3904,6 @@ helpers$1.extend(DatasetController.prototype, {
 		var values = {};
 		var i, ilen, key, readKey;
 
-		// Scriptable options
 		var context = {
 			chart: chart,
 			dataset: me.getDataset(),
@@ -3964,7 +3948,6 @@ helpers$1.extend(DatasetController.prototype, {
 			datasetIndex: me.index
 		};
 
-		// `resolve` sets cacheable to `false` if any option is indexed or scripted
 		var info = {cacheable: !custom};
 
 		var keys, i, ilen, key;
@@ -4148,8 +4131,6 @@ function clipArc(ctx, arc) {
 	var x = arc.x;
 	var y = arc.y;
 
-	// Draw an inner border by cliping the arc and drawing a double-width border
-	// Enlarge the clipping arc by 0.33 pixels to eliminate glitches between borders
 	ctx.beginPath();
 	ctx.arc(x, y, arc.outerRadius, startAngle - angleMargin, endAngle + angleMargin);
 	if (arc.innerRadius > pixelMargin) {
@@ -7660,28 +7641,16 @@ function addResizeListener(node, listener, chart) {
 			var w = container ? container.clientWidth : 0;
 			listener(createEvent('resize', chart));
 			if (container && container.clientWidth < w && chart.canvas) {
-				// If the container size shrank during chart resize, let's assume
-				// scrollbar appeared. So we resize again with the scrollbar visible -
-				// effectively making chart smaller and the scrollbar hidden again.
-				// Because we are inside `throttled`, and currently `ticking`, scroll
-				// events are ignored during this whole 2 resize process.
-				// If we assumed wrong and something else happened, we are resizing
-				// twice in a frame (potential performance issue)
 				listener(createEvent('resize', chart));
 			}
 		}
 	}));
-
-	// The resizer needs to be attached to the node parent, so we first need to be
-	// sure that `node` is attached to the DOM before injecting the resizer element.
 	watchForRender(node, function() {
 		if (expando.resizer) {
 			var container = node.parentNode;
 			if (container && container !== resizer.parentNode) {
 				container.insertBefore(resizer, container.firstChild);
 			}
-
-			// The container size might have changed, let's reset the resizer state.
 			resizer._reset();
 		}
 	});
@@ -7718,13 +7687,6 @@ function injectCSS(rootNode, css) {
 }
 
 var platform_dom$2 = {
-	/**
-	 * When `true`, prevents the automatic injection of the stylesheet required to
-	 * correctly detect when the chart is added to the DOM and then resized. This
-	 * switch has been added to allow external stylesheet (`dist/Chart(.min)?.js`)
-	 * to be manually imported to make this library compatible with any CSP.
-	 * See https://github.com/chartjs/Chart.js/issues/5208
-	 */
 	disableCSSInjection: false,
 
 	/**
@@ -7763,21 +7725,11 @@ var platform_dom$2 = {
 			item = item.canvas;
 		}
 
-		// To prevent canvas fingerprinting, some add-ons undefine the getContext
-		// method, for example: https://github.com/kkapsner/CanvasBlocker
-		// https://github.com/chartjs/Chart.js/issues/2807
+
 		var context = item && item.getContext && item.getContext('2d');
 
-		// `instanceof HTMLCanvasElement/CanvasRenderingContext2D` fails when the item is
-		// inside an iframe or when running in a protected environment. We could guess the
-		// types from their toString() value but let's keep things flexible and assume it's
-		// a sufficient condition if the item has a context2D which has item as `canvas`.
-		// https://github.com/chartjs/Chart.js/issues/3887
-		// https://github.com/chartjs/Chart.js/issues/4102
-		// https://github.com/chartjs/Chart.js/issues/4152
 		if (context && context.canvas === item) {
-			// Load platform resources on first chart creation, to make it possible to
-			// import the library before setting platform options.
+
 			this._ensureLoaded(item);
 			initCanvas(item, config);
 			return context;
@@ -7805,12 +7757,6 @@ var platform_dom$2 = {
 		helpers$1.each(initial.style || {}, function(value, key) {
 			canvas.style[key] = value;
 		});
-
-		// The canvas render size might have been changed (and thus the state stack discarded),
-		// we can't use save() and restore() to restore the initial state. So make sure that at
-		// least the canvas context is reset to the default state by setting the canvas width.
-		// https://www.w3.org/TR/2011/WD-html5-20110525/the-canvas-element.html
-		// eslint-disable-next-line no-self-assign
 		canvas.width = canvas.width;
 
 		delete canvas[EXPANDO_KEY];
@@ -7819,11 +7765,9 @@ var platform_dom$2 = {
 	addEventListener: function(chart, type, listener) {
 		var canvas = chart.canvas;
 		if (type === 'resize') {
-			// Note: the resize event is not supported on all browsers.
 			addResizeListener(canvas, listener, chart);
 			return;
 		}
-
 		var expando = listener[EXPANDO_KEY] || (listener[EXPANDO_KEY] = {});
 		var proxies = expando.proxies || (expando.proxies = {});
 		var proxy = proxies[chart.id + '_' + type] = function(event) {
@@ -7836,7 +7780,6 @@ var platform_dom$2 = {
 	removeEventListener: function(chart, type, listener) {
 		var canvas = chart.canvas;
 		if (type === 'resize') {
-			// Note: the resize event is not supported on all browsers.
 			removeResizeListener(canvas);
 			return;
 		}
@@ -8094,13 +8037,7 @@ var core_plugins = {
 };
 
 var core_scaleService = {
-	// Scale registration object. Extensions can register new scale types (such as log or DB scales) and then
-	// use the new chart options to grab the correct scale
 	constructors: {},
-	// Use a registration function so that we can move to an ES6 map when we no longer need to support
-	// old browsers
-
-	// Scale config defaults
 	defaults: {},
 	registerScaleType: function(type, scaleConstructor, scaleDefaults) {
 		this.constructors[type] = scaleConstructor;
@@ -8110,7 +8047,6 @@ var core_scaleService = {
 		return this.constructors.hasOwnProperty(type) ? this.constructors[type] : undefined;
 	},
 	getScaleDefaults: function(type) {
-		// Return the scale defaults merged with the global settings so that we always use the latest ones
 		return this.defaults.hasOwnProperty(type) ? helpers$1.merge(Object.create(null), [core_defaults.scale, this.defaults[type]]) : {};
 	},
 	updateScaleDefaults: function(type, additions) {
@@ -8186,11 +8122,7 @@ core_defaults._set('global', {
 				return title;
 			},
 			afterTitle: helpers$1.noop,
-
-			// Args are: (tooltipItems, data)
 			beforeBody: helpers$1.noop,
-
-			// Args are: (tooltipItem, data)
 			beforeLabel: helpers$1.noop,
 			label: function(tooltipItem, data) {
 				var label = data.datasets[tooltipItem.datasetIndex].label || '';
@@ -15267,62 +15199,41 @@ var Legend = core_element.extend({
 		me.doughnutMode = false;
 	},
 
-	// These methods are ordered by lifecycle. Utilities then follow.
-	// Any function defined here is inherited by all legend types.
-	// Any function can be extended by the legend type
-
 	beforeUpdate: noop$1,
 	update: function(maxWidth, maxHeight, margins) {
 		var me = this;
-
-		// Update Lifecycle - Probably don't want to ever extend or overwrite this function ;)
 		me.beforeUpdate();
-
-		// Absorb the master measurements
 		me.maxWidth = maxWidth;
 		me.maxHeight = maxHeight;
 		me.margins = margins;
-
-		// Dimensions
 		me.beforeSetDimensions();
 		me.setDimensions();
 		me.afterSetDimensions();
-		// Labels
 		me.beforeBuildLabels();
 		me.buildLabels();
 		me.afterBuildLabels();
-
-		// Fit
 		me.beforeFit();
 		me.fit();
 		me.afterFit();
-		//
 		me.afterUpdate();
 
 		return me.minSize;
 	},
 	afterUpdate: noop$1,
-
-	//
-
 	beforeSetDimensions: noop$1,
 	setDimensions: function() {
 		var me = this;
-		// Set the unconstrained dimension before label rotation
 		if (me.isHorizontal()) {
-			// Reset position before calculating rotation
 			me.width = me.maxWidth;
 			me.left = 0;
 			me.right = me.width;
 		} else {
 			me.height = me.maxHeight;
 
-			// Reset position before calculating rotation
 			me.top = 0;
 			me.bottom = me.height;
 		}
 
-		// Reset padding
 		me.paddingLeft = 0;
 		me.paddingTop = 0;
 		me.paddingRight = 0;
@@ -15394,9 +15305,6 @@ var Legend = core_element.extend({
 		ctx.font = labelFont.string;
 
 		if (isHorizontal) {
-			// Labels
-
-			// Width of each line of legend boxes. Labels wrap onto multiple lines when there are too many to fit on one
 			var lineWidths = me.lineWidths = [0];
 			var totalHeight = 0;
 
@@ -15411,8 +15319,6 @@ var Legend = core_element.extend({
 					totalHeight += fontSize + labelOpts.padding;
 					lineWidths[lineWidths.length - (i > 0 ? 0 : 1)] = 0;
 				}
-
-				// Store the hitbox width and height here. Final position will be updated in `draw`
 				hitboxes[i] = {
 					left: 0,
 					top: 0,
@@ -15445,12 +15351,8 @@ var Legend = core_element.extend({
 					currentColWidth = 0;
 					currentColHeight = 0;
 				}
-
-				// Get max width
 				currentColWidth = Math.max(currentColWidth, itemWidth);
 				currentColHeight += fontSize + vPadding;
-
-				// Store the hitbox width and height here. Final position will be updated in `draw`
 				hitboxes[i] = {
 					left: 0,
 					top: 0,
@@ -15469,13 +15371,9 @@ var Legend = core_element.extend({
 		me.height = minSize.height;
 	},
 	afterFit: noop$1,
-
-	// Shared Methods
 	isHorizontal: function() {
 		return this.options.position === 'top' || this.options.position === 'bottom';
 	},
-
-	// Actually draw the legend on the canvas
 	draw: function() {
 		var me = this;
 		var opts = me.options;
@@ -15515,8 +15413,6 @@ var Legend = core_element.extend({
 			if (isNaN(boxWidth) || boxWidth <= 0) {
 				return;
 			}
-
-			// Set the ctx for the box
 			ctx.save();
 
 			var lineWidth = valueOrDefault$e(legendItem.lineWidth, lineDefault.borderWidth);
@@ -15533,16 +15429,11 @@ var Legend = core_element.extend({
 			}
 
 			if (labelOpts && labelOpts.usePointStyle) {
-				// Recalculate x and y for drawPoint() because its expecting
-				// x and y to be center of figure (instead of top left)
 				var radius = boxWidth * Math.SQRT2 / 2;
 				var centerX = rtlHelper.xPlus(x, boxWidth / 2);
 				var centerY = y + fontSize / 2;
-
-				// Draw pointStyle as legend symbol
 				helpers$1.canvas.drawPoint(ctx, legendItem.pointStyle, radius, centerX, centerY, legendItem.rotation);
 			} else {
-				// Draw box as legend symbol
 				ctx.fillRect(rtlHelper.leftForLtr(x, boxWidth), y, boxWidth, fontSize);
 				if (lineWidth !== 0) {
 					ctx.strokeRect(rtlHelper.leftForLtr(x, boxWidth), y, boxWidth, fontSize);
@@ -15606,10 +15497,6 @@ var Legend = core_element.extend({
 			var y = cursor.y;
 
 			rtlHelper.setWidth(me.minSize.width);
-
-			// Use (me.left + me.minSize.width) and (me.top + me.minSize.height)
-			// instead of me.right and me.bottom because me.width and me.height
-			// may have been changed since me.minSize was calculated
 			if (isHorizontal) {
 				if (i > 0 && x + width + labelOpts.padding > me.left + me.minSize.width) {
 					y = cursor.y += itemHeight;
@@ -15650,13 +15537,11 @@ var Legend = core_element.extend({
 		var i, hitBox, lh;
 
 		if (x >= me.left && x <= me.right && y >= me.top && y <= me.bottom) {
-			// See if we are touching one of the dataset boxes
 			lh = me.legendHitBoxes;
 			for (i = 0; i < lh.length; ++i) {
 				hitBox = lh[i];
 
 				if (x >= hitBox.left && x <= hitBox.left + hitBox.width && y >= hitBox.top && y <= hitBox.top + hitBox.height) {
-					// Touching an element
 					return me.legendItems[i];
 				}
 			}

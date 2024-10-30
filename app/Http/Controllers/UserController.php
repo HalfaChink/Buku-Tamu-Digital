@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function chartData()
     {
-        $pengunjungPerBulan = Pengunjung::selectRaw("MONTH(created_at) as month, COUNT(*) as total")
+        $pengunjungPerBulan = Pengunjung::selectRaw("EXTRACT(MONTH FROM created_at) as month, SUM(jumlah_pengunjung) as total")
             ->groupBy('month')
             ->pluck('total', 'month')
             ->toArray();
@@ -22,6 +22,8 @@ class UserController extends Controller
 
         return response()->json($data);
     }
+
+
     public function index()
     {
         $dataPengunjung = Pengunjung::all();
