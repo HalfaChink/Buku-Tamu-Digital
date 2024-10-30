@@ -45,6 +45,12 @@ Route::get('/app', function () {
     return view('layouts/app');
 });
 
+//Login Admin
+
 Route::get('/loginadmin', function () {
-    return view('./adminpanel/loginadmin');
+    return view('./pages/loginadmin');
 })->name('loginAdmin');
+
+Route::get('/form', function () {
+    return view('/layouts/form');
+})->name('form');
