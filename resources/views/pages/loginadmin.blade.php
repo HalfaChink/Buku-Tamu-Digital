@@ -19,7 +19,7 @@
 
 </head>
 
-<body>F
+<body>
   <section class="">
     <x-navback></x-navback>
     <div class="px-5 py-2 px-md-5 text-lg-start pt-5" style="background-color: rgb(59, 32, 75); height: 100vh;">
@@ -34,22 +34,24 @@
               <div class="card-body py-5 px-md-5">
                 <h1 class="text-lg text-uppercase font-weight-bold text-dark ">login admin</h1>
 
-                <form action="" style="margin-top: 90px;">
-                  <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example3">username</label>
-                    <input type="text" id="form3Example3" class="form-control" style="border: 1px solid #FF5A5A" />
+                <form action="{{ route('loginAdmin.submit') }}" method="POST" style="margin-top: 90px;">
+                  @csrf
+                  <div class="form-outline mb-2">
+                    <label class="form-label" for="username">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" style="border: 1px solid #FF5A5A" />
                   </div>
 
-                  <div data-mdb-input-init class="form-outline mb-2">
-                    <label class="form-label" for="form3Example3">password</label>
-                    <input type="password" id="form3Example3" class="form-control" style="border: 1px solid #FF5A5A" />
+                  <div class="form-outline mb-2">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" style="border: 1px solid #FF5A5A" />
                   </div>
 
-                  <div class="d-flex d-md-flex justify-content-md-end pt-5">
-                    <button class="btn me-md-2 text-light font-weight-bold" type="button" style="background-color: rgb(59, 32, 75)">login</button>
+                  <div class="d-flex justify-content-end pt-5">
+                    <button class="btn text-light font-weight-bold" type="submit" style="background-color: rgb(59, 32, 75)">Login</button>
                   </div>
                 </form>
-                
+
+
               </div>
             </div>
           </div>
