@@ -3,10 +3,29 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KunjunganController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 
-Route::get('/historytable', [KunjunganController::class, 'history'])->name('historytable');
+Route::get('/loginadmin', function () {
+    return view('./pages/loginadmin');
+})->name('loginAdmin');
+Route::post('/loginadmin', [AdminController::class, 'login'])->name('loginAdmin.submit');
 
-Route::get('/usertable', [UserController::class, 'index'])->name('usertable');
+
+Route::middleware(['admin'])->group(function () {
+    Route::get('/historytable', function () {
+        return view('./adminpanel/historytable');
+    });
+    Route::get('/charts', function () {
+        return view('./adminpanel/charts');
+    });
+    Route::get('/edit', function () {
+        return view('./adminpanel/edit');
+    });
+    Route::get('/listadmin', function () {
+        return view('./adminpanel/listadmin');
+    });
+    Route::get('/usertable', [UserController::class, 'index'])->name('usertable');
+});
 
 Route::post('/pengunjung/store', [UserController::class, 'store'])->name('pengunjung.store');
 Route::post('/kunjungan/store', [KunjunganController::class, 'store'])->name('kunjungan.store');
@@ -14,23 +33,11 @@ Route::get('/chart-data', [UserController::class, 'chartData'])->name('chart.dat
 
 
 
+
 // dashboard 
 Route::get('/', function () {  
     return view('./pages/dashboard');
 })->name('dashboard');
-
-// panel admin 
-Route::get('/charts', function () {
-    return view('./adminpanel/charts');
-});
-
-Route::get('/edit', function () {
-    return view('./adminpanel/edit');
-});
-
-Route::get('/listadmin', function () {
-    return view('./adminpanel/listadmin');
-});
 
 // register
 Route::get('/register', function () {
@@ -45,6 +52,7 @@ Route::get('/app', function () {
     return view('layouts/app');
 });
 
+<<<<<<< HEAD
 //Login Admin
 
 Route::get('/adminsignup', function () {
@@ -55,6 +63,8 @@ Route::get('/loginadmin', function () {
     return view('./pages/loginadmin');
 })->name('loginadmin');
 
+=======
+>>>>>>> bd32399b013c219a5705df14c716f6419a4dbcdc
 Route::get('/form', function () {
     return view('/layouts/form');
 })->name('form');
