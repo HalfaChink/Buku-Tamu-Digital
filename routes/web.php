@@ -15,7 +15,7 @@ Route::get('/chart-data', [UserController::class, 'chartData'])->name('chart.dat
 
 
 // dashboard 
-Route::get('/', function () {
+Route::get('/', function () {  
     return view('./pages/dashboard');
 })->name('dashboard');
 
@@ -47,9 +47,13 @@ Route::get('/app', function () {
 
 //Login Admin
 
+Route::get('/adminsignup', function () {
+    return view('./pages/adminsignup');
+})->name('adminsignup');
+
 Route::get('/loginadmin', function () {
     return view('./pages/loginadmin');
-})->name('loginAdmin');
+})->name('loginadmin');
 
 Route::get('/form', function () {
     return view('/layouts/form');
