@@ -27,6 +27,12 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/usertable', [UserController::class, 'index'])->name('usertable');
 });
 
+Route::post('/pengunjung/store', [UserController::class, 'store'])->name('pengunjung.store');
+Route::post('/kunjungan/store', [KunjunganController::class, 'store'])->name('kunjungan.store');
+Route::get('/chart-data', [UserController::class, 'chartData'])->name('chart.data');
+
+
+
 
 // dashboard 
 Route::get('/', function () {
