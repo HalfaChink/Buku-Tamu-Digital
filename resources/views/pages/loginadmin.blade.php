@@ -15,6 +15,7 @@ Login Admin
 </div>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <div data-mdb-input-init class="form-outline mb-2">
     <label class="form-label" for="form3Example3">password</label>
     <input type="password" id="form3Example3" class="form-control" style="border: 1px solid #FF5A5A" />
@@ -25,13 +26,15 @@ Login Admin
 </div>
 @endsection
 =======
+=======
+>>>>>>> 32836c4 (test)
 <body>
   <section class="">
     <x-navback></x-navback>
     <div class="px-5 py-2 px-md-5 text-lg-start pt-5" style="background-color: rgb(59, 32, 75); height: 100vh;">
       <div class="container">
         <div class="row gx-lg-5 align-items-center">
-          <div class="col-lg-6 mb-5 mb-lg-0 text-center">
+          <div class="col-lg-6 mb-5 mb-lg-0 text-center d-none d-lg-block">
             <img src="{{ asset('admin/img/logotest.png') }}" alt="PT.artristik Studio Bandung" width="400">
           </div>
 

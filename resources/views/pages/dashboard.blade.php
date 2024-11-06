@@ -184,7 +184,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row justify-content-center my-3">
-                            <div class="col-sm-3 sm-md-5">
+                            <div class="col-sm-3 sm-md-5 ">
                                 <div class="card shadow">
                                     <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 1">
                                     <div class="card-body">
