@@ -52,7 +52,6 @@ Route::get('/app', function () {
     return view('layouts/app');
 });
 
-<<<<<<< HEAD
 //Login Admin
 
 Route::get('/adminsignup', function () {
@@ -63,8 +62,6 @@ Route::get('/loginadmin', function () {
     return view('./pages/loginadmin');
 })->name('loginadmin');
 
-=======
->>>>>>> bd32399b013c219a5705df14c716f6419a4dbcdc
 Route::get('/form', function () {
     return view('/layouts/form');
 })->name('form');
