@@ -44,7 +44,7 @@
     </div> -->
     <div class="container-fluid">
         <div class="button position-absolute row px-5 py-2">
-            <a href="" class="btn btn-light btn-md">Kembali</a>
+            <a href="{{ url()->previous() }}" class="btn btn-light btn-md">Kembali</a>
         </div>
         <div class="position-sm d-flex align-items-center position-relative vh-100">
             <div class="row d-flex justify-content-around w-100">

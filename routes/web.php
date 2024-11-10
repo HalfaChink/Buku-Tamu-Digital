@@ -5,13 +5,11 @@ use App\Http\Controllers\KunjunganController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 
-Route::get('/loginadmin', function () {
-    return view('./pages/loginadmin');
-})->name('loginAdmin');
+
 Route::post('/loginadmin', [AdminController::class, 'login'])->name('loginAdmin.submit');
 
 
-Route::middleware(['admin'])->group(function () {
+Route::middleware(['auth:admin'])->group(function () {
     Route::get('/historytable', function () {
         return view('./adminpanel/historytable');
     });
@@ -33,9 +31,9 @@ Route::get('/chart-data', [UserController::class, 'chartData'])->name('chart.dat
 
 
 
-
+Route::post('/logoutAdmin', [AdminController::class, 'logout'])->name('logoutAdmin');
 // dashboard 
-Route::get('/', function () {  
+Route::get('/', function () {
     return view('./pages/dashboard');
 })->name('dashboard');
 
