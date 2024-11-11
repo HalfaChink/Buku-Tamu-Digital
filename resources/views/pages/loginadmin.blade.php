@@ -26,8 +26,8 @@ Login Admin
 <body>
   <section class="">
     <x-navback></x-navback>
-    <div class="px-5 py-2 px-md-5 text-lg-start pt-5" style="background-color: rgb(59, 32, 75); height: 100vh;">
-      <div class="container">
+    <div class="container">
+    <div class="pt-5 -px-1" style="background-color: rgb(59, 32, 75); height: 100vh;">
         <div class="row gx-lg-5 align-items-center">
           <div class="col-lg-6 mb-5 mb-lg-0 text-center d-none d-lg-block">
             <img src="{{ asset('admin/img/logotest.png') }}" alt="PT.artristik Studio Bandung" width="400">

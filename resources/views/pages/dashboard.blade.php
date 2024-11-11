@@ -66,6 +66,8 @@
             padding: 20px;
             border: 1px solid #FF5A5A;
         }   
+
+        
     </style>
 </head>
 
@@ -115,7 +117,7 @@
                     <button type="button" data-bs-target="#carouselExampleIndicators " data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
                 </div>
-                <div class="carousel-inner shadow-lg p-0 m-4 rounded-3 border">
+                <div class="carousel-inner shadow-lg p-0 rounded-3 border">
                     <div class="carousel-item active">
                         <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto img-fluid" alt="...">
                     </div>
@@ -141,15 +143,16 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <div class="d-flex justify-content-center m-5">
+                <a class="btn text-light" href="{{ route('register') }}" role="button"
+                    style="background-color: #3b1f4b;">
+                    <h3 class="fs-5">Berkunjung</h3>
+                </a>
+            </div>
         </div>
 
         <!-- Register -->
-        <div class="d-flex justify-content-center m-5">
-            <a class="btn text-light" href="{{ route('register') }}" role="button"
-                style="background-color: #3b1f4b;">
-                <h3 class="fs-5">Berkunjung</h3>
-            </a>
-        </div>
+       
 
     </section>
 
@@ -184,7 +187,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row justify-content-center my-3">
-                            <div class="col-sm-3 sm-md-5 ">
+                            <div class="col-sm-3 sm-md-5">
                                 <div class="card shadow">
                                     <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 1">
                                     <div class="card-body">
