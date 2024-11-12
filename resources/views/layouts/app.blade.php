@@ -35,9 +35,9 @@
             </a>
             <hr class="sidebar-divider my-0">
             <li class="nav-item active">
-                <a class="nav-link" href="/charts">
+                <a class="nav-link" href="/dashboard">
                     <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Charts</span></a>
+                    <span>Dashboard</span></a>
             </li>
             <hr class="sidebar-divider">
             <li class="nav-item active">

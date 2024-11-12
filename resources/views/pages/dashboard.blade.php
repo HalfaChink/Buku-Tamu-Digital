@@ -65,9 +65,7 @@
             border-radius: 15px;
             padding: 20px;
             border: 1px solid #FF5A5A;
-        }   
-
-        
+        }
     </style>
 </head>
 
@@ -107,52 +105,45 @@
         <div class="container">
 
             <!-- Carousell -->
-            <div id="carouselExampleIndicators" class="carousel slide mx-auto"
-                style="width: 80%; height: 15%; box-sizing: border-box;">
+            <div id="carouselExampleIndicators" class="carousel slide mx-auto" style="width: 80%; height: 15%; box-sizing: border-box;">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                        class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators " data-bs-slide-to="2"
-                        aria-label="Slide 3"></button>
+                    @foreach($carouselImages as $index => $carousel)
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-current="true" aria-label="Slide {{ $index + 1 }}"></button>
+                    @endforeach
                 </div>
                 <div class="carousel-inner shadow-lg p-0 rounded-3 border">
-                    <div class="carousel-item active">
-                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto img-fluid" alt="...">
+                    @foreach($carouselImages as $index => $carousel)
+                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                        <img src="{{ asset('admin/img/' . $carousel->image) }}" class="d-block mx-auto img-fluid" alt="carousel image">
                     </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto img-fluid" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="{{ asset('admin/img/logo.png') }}" class="d-block mx-auto img-fluid" alt="...">
-                    </div>
+                    @endforeach
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="prev">
-                    <span aria-hidden="true">
-                        <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
-                    </span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                    data-bs-slide="next">
-                    <span aria-hidden="true">
-                        <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
-                    </span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
-            <div class="d-flex justify-content-center m-5">
-                <a class="btn text-light" href="{{ route('register') }}" role="button"
-                    style="background-color: #3b1f4b;">
-                    <h3 class="fs-5">Berkunjung</h3>
-                </a>
-            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span aria-hidden="true">
+                    <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
+                </span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span aria-hidden="true">
+                    <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
+                </span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="d-flex justify-content-center m-5">
+            <a class="btn text-light" href="{{ route('register') }}" role="button"
+                style="background-color: #3b1f4b;">
+                <h3 class="fs-5">Berkunjung</h3>
+            </a>
+        </div>
         </div>
 
         <!-- Register -->
-       
+
 
     </section>
 

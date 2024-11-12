@@ -4,16 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KunjunganController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-
+use App\Http\Controllers\EditController;
 
 Route::post('/loginadmin', [AdminController::class, 'login'])->name('loginAdmin.submit');
-
 
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('/historytable', function () {
         return view('./adminpanel/historytable');
     });
-    Route::get('/charts', function () {
+    Route::get('/dashboard', function () {
         return view('./adminpanel/charts');
     });
     Route::get('/edit', function () {
@@ -22,7 +21,10 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/listadmin', function () {
         return view('./adminpanel/listadmin');
     });
-    Route::get('/usertable', [UserController::class, 'index'])->name('usertable');
+    Route::get('/carousel/edit', [EditController::class, 'edit'])->name('carousel.edit');
+    Route::post('/carousel/store', [EditController::class, 'store'])->name('carousel.store');
+    Route::post('/carousel/update/{id}', [EditController::class, 'update'])->name('carousel.update');
+    Route::delete('/carousel/destroy/{id}', [EditController::class, 'destroy'])->name('carousel.destroy');
 });
 
 Route::post('/pengunjung/store', [UserController::class, 'store'])->name('pengunjung.store');
@@ -33,9 +35,7 @@ Route::get('/chart-data', [UserController::class, 'chartData'])->name('chart.dat
 
 Route::post('/logoutAdmin', [AdminController::class, 'logout'])->name('logoutAdmin');
 // dashboard 
-Route::get('/', function () {
-    return view('./pages/dashboard');
-})->name('dashboard');
+Route::get('/', [EditController::class, 'dashboard'])->name('dashboard');
 
 // register
 Route::get('/register', function () {

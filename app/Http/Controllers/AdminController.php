@@ -13,7 +13,7 @@ class AdminController extends Controller
         $credentials = $request->only('username', 'password');
 
         if (Auth::guard('admin')->attempt($credentials)) {
-            return redirect()->intended('/charts');
+            return redirect()->intended('/dashboard');
         }
 
         return back()->withErrors(['loginError' => 'Username atau password salah']);
