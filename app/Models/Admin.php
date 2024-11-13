@@ -9,4 +9,5 @@ class Admin extends Authenticatable implements AuthenticatableContract
 {
     protected $fillable = ['username', 'password'];
     protected $hidden = ['password'];
+    protected $table = 'admins';
 }

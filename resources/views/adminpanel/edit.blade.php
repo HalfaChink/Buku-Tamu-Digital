@@ -7,7 +7,7 @@ Edit
 @section('content')
 
 <div class="container">
-    <h2>Edit Carousel Images</h2>
+    <h2>Edit Carousel</h2>
 
     <!-- Display Carousel Images -->
     <div class="row mb-4">
@@ -28,12 +28,11 @@ Edit
         @endforeach
     </div>
 
-    <!-- Add New Carousel Image -->
-    <h4>Add New Image</h4>
+    <h4>Tambah Image Baru</h4>
     <form action="{{ route('carousel.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <input type="file" name="image" class="form-control mb-2">
-        <button type="submit" class="btn btn-success">Add Image</button>
+        <button type="submit" class="btn btn-success">Tambahkan Image</button>
     </form>
 </div>
 @endsection
