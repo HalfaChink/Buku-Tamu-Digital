@@ -6,7 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditController;
 
-Route::post('/loginadmin', [AdminController::class, 'login'])->name('loginAdmin.submit');
+Route::post('/login', [AdminController::class, 'login'])->name('login.submit');
 
 Route::middleware(['auth:admin'])->group(function () {
     Route::get('/historytable', function () {
@@ -45,7 +45,7 @@ Route::get('/app', function () {
 });
 Route::get('/login', function () {
     return view('./pages/loginadmin');
-})->name('loginadmin');
+})->name('login');
 Route::get('/form', function () {
     return view('/layouts/form');
 })->name('form');
