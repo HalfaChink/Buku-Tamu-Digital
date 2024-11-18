@@ -92,7 +92,7 @@
                                 Menu
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="{{ route('loginadmin') }}">Login Admin</a></li>
+                                <li><a class="dropdown-item" href="{{ route('login') }}">Login Admin</a></li>
                                 <li><a class="dropdown-item" href="#content">Kunjungan Hari Ini</a></li>
                             </ul>
                         </li>

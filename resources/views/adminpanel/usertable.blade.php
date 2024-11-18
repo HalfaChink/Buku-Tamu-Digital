@@ -24,6 +24,7 @@ Daftar Pengunjung
                                     <th>Email</th>
                                     <th>No. Tlp</th>
                                     <th>Jumlah Pengunjung</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -35,6 +36,15 @@ Daftar Pengunjung
                                     <td>{{ $pengunjung->email }}</td>
                                     <td>{{ $pengunjung->no_tlp }}</td>
                                     <td>{{ $pengunjung->jumlah_pengunjung }}</td>
+                                    <td>
+                                        <form action="{{ route('pengunjung.destroy', $pengunjung->id) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus data ini?')">
+                                                Hapus
+                                            </button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -45,4 +55,26 @@ Daftar Pengunjung
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#dataTable').DataTable({
+            paging: true,
+            searching: true,
+            lengthMenu: [10, 25, 50],
+            order: [
+                [0, 'asc']
+            ],
+        });
+    });
+</script>
+@endsection
+
+@section('styles')
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
 @endsection

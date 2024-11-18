@@ -26,12 +26,14 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::post('/carousel/store', [EditController::class, 'store'])->name('carousel.store');
     Route::post('/carousel/update/{id}', [EditController::class, 'update'])->name('carousel.update');
     Route::delete('/carousel/destroy/{id}', [EditController::class, 'destroy'])->name('carousel.destroy');
+    Route::delete('/pengunjung/{id}', [UserController::class, 'destroy'])->name('pengunjung.destroy');
 });
 
 Route::post('/pengunjung/store', [UserController::class, 'store'])->name('pengunjung.store');
 Route::post('/kunjungan/store', [KunjunganController::class, 'store'])->name('kunjungan.store');
 Route::get('/chart-data', [UserController::class, 'chartData'])->name('chart.data');
 Route::post('/logoutAdmin', [AdminController::class, 'logout'])->name('logoutAdmin');
+
 
 Route::get('/', [EditController::class, 'dashboard'])->name('dashboard');
 Route::get('/register', function () {

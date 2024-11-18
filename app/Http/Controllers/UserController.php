@@ -44,4 +44,11 @@ class UserController extends Controller
 
         return redirect()->route('register2')->with('success', 'Data berhasil disimpan!');
     }
+    public function destroy($id)
+    {
+        $pengunjung = Pengunjung::findOrFail($id);
+        $pengunjung->delete();
+
+        return redirect()->route('usertable')->with('success', 'Data berhasil dihapus.');
+    }
 }
