@@ -18,30 +18,6 @@
 </head>
 
 <body>
-    <!-- <div class="">   
-    
-    <div class="container">
-            <a href="" class="btn btn-light btn-sm">Kembali</a>
-        </div>
-        <div class="row vh-100 d-flex align-items-center">
-            <div class="col-md-6 d-md-block d-none text-center">
-                <img src="{{ asset('admin/img/logotest.png') }}" alt="PT.artristik Studio Bandung" width="400">
-            </div>
-            <div class="col-md-5 mb-5">
-                <div class="card">
-                    <div class="card-body py-3 px-md-5">
-                        <h2>
-                        @yield('form-title') 
-                        </h2>
-                        <form action="{{ route('pengunjung.store') }}" method="POST">
-                            @csrf
-                            @yield('form')
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
     <div class="container-fluid">
         <div class="button position-absolute row px-4 py-2">
             <a href="{{ route('dashboard') }}" class="btn btn-light btn-sm">Kembali</a>
