@@ -43,19 +43,18 @@
         </div>
     </div> -->
     <div class="container-fluid">
-        <div class="button position-absolute row px-5 py-2">
-            <a href="{{ url()->previous() }}" class="btn btn-light btn-md">Kembali</a>
+        <div class="button position-absolute row px-4 py-2">
+            <a href="{{ route('dashboard') }}" class="btn btn-light btn-sm">Kembali</a>
         </div>
         <div class="position-sm d-flex align-items-center position-relative vh-100">
             <div class="row d-flex justify-content-around w-100">
-                <img class="d-none d-lg-inline" src="{{ asset('admin/img/logotest.png') }}" alt="PT.artristik Studio Bandung" width="500">
+                <img class="gmb" src="{{ asset('admin/img/logotest.png') }}" alt="PT.artristik Studio Bandung" width="500">
                 <div class="card">
-                    <div class="card-body bg-light p-5">
-                        @yield('form-title')
-                        <form action="{{ route('pengunjung.store') }}" method="POST">
-                            @csrf
+                    <div class="card-body bg-light px-5 pt-4">
+                        <div>
+                            @yield('form-title')
                             @yield('form')
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
