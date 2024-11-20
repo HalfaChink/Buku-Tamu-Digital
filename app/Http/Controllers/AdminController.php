@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class AdminController extends Controller
 {
@@ -46,5 +47,13 @@ class AdminController extends Controller
     {
         $admins = Admin::all();
         return view('adminpanel.listadmin', compact('admins'));
+    }
+
+    public function destroy($id)
+    {
+        $admin = Admin::findOrFail($id);
+        $admin->delete();
+
+        return redirect()->route('listadmin')->with('success', 'Data berhasil dihapus.');
     }
 }

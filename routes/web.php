@@ -19,14 +19,15 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/adminsignup', function () {
         return view('./pages/adminsignup');
     })->name('admin.signup.form');
-    Route::post('/adminsignup', [AdminController::class, 'signup'])->name('admin.signup');
     Route::get('/edit', [EditController::class, 'edit'])->name('edit');
     Route::get('/usertable', [UserController::class, 'index'])->name('usertable');
     Route::get('/carousel/edit', [EditController::class, 'edit'])->name('carousel.edit');
+    Route::post('/adminsignup', [AdminController::class, 'signup'])->name('admin.signup');
     Route::post('/carousel/store', [EditController::class, 'store'])->name('carousel.store');
     Route::post('/carousel/update/{id}', [EditController::class, 'update'])->name('carousel.update');
     Route::delete('/carousel/destroy/{id}', [EditController::class, 'destroy'])->name('carousel.destroy');
     Route::delete('/pengunjung/{id}', [UserController::class, 'destroy'])->name('pengunjung.destroy');
+    Route::delete('/admins/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
 });
 
 Route::post('/pengunjung/store', [UserController::class, 'store'])->name('pengunjung.store');

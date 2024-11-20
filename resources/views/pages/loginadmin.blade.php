@@ -24,7 +24,7 @@ Login Admin
 
   <div data-mdb-input-init class="form-outline mb-2">
     <label class="form-label" for="password">Password</label>
-    <input type="text" name="password" id="password" class="form-control" style="border: 1px solid #FF5A5A" />
+    <input type="password" name="password" id="password" class="form-control" style="border: 1px solid #FF5A5A" />
   </div>
 
   <div class="d-flex justify-content-end">
