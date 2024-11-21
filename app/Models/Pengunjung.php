@@ -17,5 +17,7 @@ class Pengunjung extends Model
         'email',
         'no_tlp',
         'jumlah_pengunjung',
+        'tujuan_detail',
+        'komentar',
     ];
 }

@@ -24,6 +24,8 @@ Daftar Pengunjung
                                     <th>Email</th>
                                     <th>No. Tlp</th>
                                     <th>Jumlah Pengunjung</th>
+                                    <th>Tujuan</th>
+                                    <th>Komentar</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -36,6 +38,8 @@ Daftar Pengunjung
                                     <td>{{ $pengunjung->email }}</td>
                                     <td>{{ $pengunjung->no_tlp }}</td>
                                     <td>{{ $pengunjung->jumlah_pengunjung }}</td>
+                                    <td>{{ $pengunjung->tujuan_detail }}</td>
+                                    <td>{{ $pengunjung->komentar }}</td>
                                     <td>
                                         <form action="{{ route('pengunjung.destroy', $pengunjung->id) }}" method="POST" class="d-inline">
                                             @csrf

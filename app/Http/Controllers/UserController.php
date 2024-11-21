@@ -38,12 +38,15 @@ class UserController extends Controller
             'email' => 'required|email',
             'no_tlp' => 'required|numeric',
             'jumlah_pengunjung' => 'required|numeric',
+            'tujuan_detail' => 'required|string|max:1000',
+            'komentar' => 'required|string|max:1000',
         ]);
 
         Pengunjung::create($validatedData);
 
-        return redirect()->route('register2')->with('success', 'Data berhasil disimpan!');
+        return redirect()->route('register')->with('success', 'Data berhasil disimpan!');
     }
+
     public function destroy($id)
     {
         $pengunjung = Pengunjung::findOrFail($id);

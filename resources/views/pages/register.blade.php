@@ -9,7 +9,7 @@ Masukan Detail Kunjungan
 @endsection
 
 @section('form')
-<form method="post" action="">
+<form method="post" action="{{ route('pengunjung.store') }}">
   @csrf
   <div data-mdb-input-init class="form-outline mb-2">
     <label class="form-label" for="nama">Nama</label>
