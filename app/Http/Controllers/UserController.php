@@ -26,6 +26,8 @@ class UserController extends Controller
 
     public function index()
     {
+        $today = Carbon::today()->toDateString();
+        $dataPengunjung = Pengunjung::whereDate('created_at', $today)->get();
         $dataPengunjung = Pengunjung::all();
 
         return view('adminpanel.usertable', compact('dataPengunjung'));

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Edit;
+use App\Models\Pengunjung;
+use App\Http\Controllers\UserController;
+use Carbon\Carbon;
 
 class EditController extends Controller
 {
@@ -52,7 +55,9 @@ class EditController extends Controller
 
     public function dashboard()
     {
+        $today = Carbon::today()->toDateString();
+        $todayVisitors = Pengunjung::whereDate('created_at', $today)->get();
         $carouselImages = Edit::all();
-        return view('pages.dashboard', compact('carouselImages'));
+        return view('pages.dashboard', compact('carouselImages', 'todayVisitors'));
     }
 }

@@ -143,19 +143,16 @@
         </div>
 
         <!-- Register -->
-
-
     </section>
 
     <!-- Content -->
     <section id="content">
-
         <!-- Kunjungan hari ini -->
         <div id="hari-ini" class="p-5" style="background-color: #3b1f4b; color: #FFB91E;">
             <div class="container">
                 <div class="d-flex fs-4 justify-content-between ">
                     <p class="fw-bold">Kunjungan Hari Ini</p>
-                    <p class="fw-bold">22 September 2077</p>
+                    <p class="fw-bold">{{ \Carbon\Carbon::now()->format('d F Y') }}</p>
                 </div>
                 <table id="tabel" class="mx-auto bg-white m-4" style="color: #3b1f4b;">
                     <thead>
@@ -166,110 +163,106 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($todayVisitors as $index => $visitor)
+                        <tr>
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $visitor->nama }}</td>
+                            <td>{{ $visitor->tujuan_detail }}</td>
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
+    </section>
 
-        <!-- Kunjungan sebelumnya -->
-        <div class="container mt-5">
-            <h2 class="fs-4 fw-bold">Siapa Saja Yang Pernah <br />Berkunjung</h2>
-            <div id="kunjungan" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center my-3">
-                            <div class="col-sm-3 sm-md-5">
-                                <div class="card shadow">
-                                    <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 1">
-                                    <div class="card-body">
-                                        <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
-                                        <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
-                                    </div>
+
+    <!-- Kunjungan sebelumnya -->
+    <div class="container mt-5">
+        <h2 class="fs-4 fw-bold">Siapa Saja Yang Pernah <br />Berkunjung</h2>
+        <div id="kunjungan" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row justify-content-center my-3">
+                        <div class="col-sm-3 sm-md-5">
+                            <div class="card shadow">
+                                <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 1">
+                                <div class="card-body">
+                                    <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
+                                    <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="card shadow">
-                                    <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 2">
-                                    <div class="card-body">
-                                        <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
-                                        <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
-                                    </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card shadow">
+                                <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 2">
+                                <div class="card-body">
+                                    <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
+                                    <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="card shadow">
-                                    <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 3">
-                                    <div class="card-body">
-                                        <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
-                                        <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
-                                    </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="card shadow">
+                                <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 3">
+                                <div class="card-body">
+                                    <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
+                                    <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#kunjungan" data-bs-slide="prev">
-                    <span aria-hidden="true">
-                        <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
-                    </span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#kunjungan" data-bs-slide="next">
-                    <span aria-hidden="true">
-                        <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
-                    </span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#kunjungan" data-bs-slide="prev">
+                <span aria-hidden="true">
+                    <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
+                </span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#kunjungan" data-bs-slide="next">
+                <span aria-hidden="true">
+                    <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
+                </span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+    </div>
 
-        <!-- Komentar -->
-        <div class="container my-5">
-            <h2 class="text-center mb-4">Komentar Pengunjung</h2>
-            <div id="komen" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
-                            <div class="comment-card">
-                                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, ea. Non ducimus accusamus earum harum!</p>
-                                <p class="text-right" style="font-weight: bold;">- costa</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
-                            <div class="comment-card">
-                                <p class="card-text">Mauris ornare lectus sed enim pulvinar, sit amet luctus ante
-                                    pharetra. Donec pulvinar magna sed justo ullamcorper tempor.</p>
-                                <p class="text-right" style="font-weight: bold;">- Jane Doe</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
-                            <div class="comment-card">
-                                <p class="card-text">Pellentesque luctus nibh mauris, id varius magna pellentesque a.
-                                    Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
-                                <p class="text-right" style="font-weight: bold;">- John Smith</p>
-                            </div>
+    <!-- Komentar -->
+    <div class="container my-5">
+        <h2 class="text-center mb-4">Komentar Pengunjung Hari Ini</h2>
+        <div id="komen" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                @foreach ($todayVisitors as $key => $visitor)
+                @if($visitor->komentar)
+                <div class="carousel-item @if ($key == 0) active @endif">
+                    <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
+                        <div class="comment-card">
+                            <p class="card-text">{{ $visitor->komentar }}</p>
+                            <p class="text-right" style="font-weight: bold;">- {{ $visitor->nama }}</p>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#komen" data-bs-slide="prev">
-                    <span aria-hidden="true">
-                        <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
-                    </span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#komen" data-bs-slide="next">
-                    <span aria-hidden="true">
-                        <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
-                    </span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+                @endif
+                @endforeach
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#komen" data-bs-slide="prev">
+                <span aria-hidden="true">
+                    <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
+                </span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#komen" data-bs-slide="next">
+                <span aria-hidden="true">
+                    <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
+                </span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
+    </div>
+
 
     </section>
 
