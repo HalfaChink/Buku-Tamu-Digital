@@ -23,7 +23,7 @@
             <a href="{{ route('dashboard') }}" class="btn btn-light btn-sm">Kembali</a>
         </div>
         <div class="position-sm d-flex align-items-center position-relative vh-100">
-            <div class="row d-flex justify-content-around w-100">
+            <div class="row d-flex justify-content-around">
                 <img class="gmb" src="{{ asset('admin/img/logotest.png') }}" alt="PT.artristik Studio Bandung" width="500">
                 <div class="card">
                     <div class="card-body bg-light px-5 pt-4">

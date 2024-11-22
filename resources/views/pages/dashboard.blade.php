@@ -66,6 +66,27 @@
             padding: 20px;
             border: 1px solid #FF5A5A;
         }
+        @media screen and (max-width: 758px) {
+            #tabel{
+                width: 100%;
+            }
+            #tabel th:first-child,
+            #tabel td:first-child{
+                width: 5%;
+            }
+            #tabel th:nth-child(2),
+            #tabel td:nth-child(2){
+                width: 15%;
+            }
+            #tabel th:nth-child(3),
+            #tabel td:nth-child(3) {
+                width: 15%;  
+            }
+            #hari-ini p{
+                font-size: 15px;
+            }
+        }
+
     </style>
 </head>
 
@@ -105,7 +126,7 @@
         <div class="container">
 
             <!-- Carousell -->
-            <div id="carouselExampleIndicators" class="carousel slide mx-auto" style="width: 80%; height: 15%; box-sizing: border-box;">
+            <div id="carouselExampleIndicators" class="carousel slide mx-auto mt-5" style="width: 35%; box-sizing: border-box;">
                 <div class="carousel-indicators">
                     @foreach($carouselImages as $index => $carousel)
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-current="true" aria-label="Slide {{ $index + 1 }}"></button>
