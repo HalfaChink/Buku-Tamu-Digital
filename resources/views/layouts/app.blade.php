@@ -39,8 +39,18 @@
                     <span>Edit Konten</span>
                 </a>
             </li>
+            {{-- <hr class="sidebar-divider">
+            <li class="nav-item active">
+<<<<<<< HEAD
+=======
+                <a class="nav-link" href="/historytable">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>List Kunjungan</span>
+                </a>
+            </li> --}}
             <hr class="sidebar-divider">
             <li class="nav-item active">
+>>>>>>> 67a9b69 (update sikit)
                 <a class="nav-link" href="/usertable">
                     <i class="fas fa-fw fa-table"></i>
                     <span>List Pengunjung</span>
