@@ -15,6 +15,23 @@
     <title>
         @yield('title')
     </title>
+
+    <style>
+        @media screen and (max-width: 576px){
+            img{
+                width: 150px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .card{
+                border-top-left-radius: 70px;
+                border-top-right-radius: 70px;
+            }
+            .card-body{
+                margin-top: 50px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -22,9 +39,9 @@
         <div class="button position-absolute row px-4 py-2">
             <a href="{{ route('dashboard') }}" class="btn btn-light btn-sm">Kembali</a>
         </div>
-        <div class="position-sm d-flex align-items-center position-relative vh-100">
-            <div class="row d-flex justify-content-around w-100">
-                <img class="gmb" src="{{ asset('admin/img/logotest.png') }}" alt="PT.artristik Studio Bandung" width="500">
+        <div id="forms" class="position-sm d-flex align-items-center position-relative vh-100">
+            <div class="row d-flex justify-content-around w-[100%] mx-auto">
+                <img class="gmb d-block img-fluid my-5" src="{{ asset('admin/img/logotest.png') }}" alt="PT.artristik Studio Bandung" width="500" style="margin-right: 150px; margin-top: 10px;">
                 <div class="card">
                     <div class="card-body bg-light px-5 pt-4">
                         <div>
@@ -37,5 +54,6 @@
         </div>
     </div>
 </body>
+
 
 </html>

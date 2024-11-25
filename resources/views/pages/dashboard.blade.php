@@ -89,9 +89,6 @@
             #hari-ini p{
                 font-size: 15px;
             }
-            #images img{
-                height: 250px;
-            }
         }
 
     </style>
@@ -133,35 +130,33 @@
         <div class="container">
 
             <!-- Carousell -->
-            <div id="image" class="carousel slide mx-auto mt-3" style="box-sizing: border-box;">
-                <div class="carousel-indicators">
-                    @foreach($carouselImages as $index => $carousel)
+        <div id="image" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                @foreach($carouselImages as $index => $carousel)
                     <button type="button" data-bs-target="#image" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-current="true" aria-label="Slide {{ $index + 1 }}"></button>
-                    @endforeach
-                </div>
-                <div class="carousel-inner shadow-lg p-0 rounded-3 border mx-auto" style="width: 80%; height: 500px;">
-                    @foreach($carouselImages as $index => $carousel)
-                    <div id="images" class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                        <img src="{{ asset('admin/img/' . $carousel->image) }}" class="d-flex mx-auto img-fluid " alt="carousel image" style="height: 500px;">
-                    </div>
-                    @endforeach
-                </div>
+                @endforeach
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#image"
-                data-bs-slide="prev">
+            <div class="carousel-inner shadow-lg p-0 rounded-3 border mx-auto" style="max-width: 80%; height: auto;">
+                @foreach($carouselImages as $index => $carousel)
+                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                        <img src="{{ asset('admin/img/' . $carousel->image) }}" class="d-block w-100" alt="carousel image" style="height: auto; max-height: 500px; ">
+                    </div>
+                @endforeach
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#image" data-bs-slide="prev">
                 <span aria-hidden="true">
-                    <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
+                    <i style="color: #3B1F4B; margin-left: -30px;" class="bx bx-chevron-left bx-lg"></i>
                 </span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#image"
-                data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#image" data-bs-slide="next">
                 <span aria-hidden="true">
-                    <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
+                    <i style="color: #3B1F4B; margin-right: -30px;" class="bx bx-chevron-right bx-lg"></i>
                 </span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
         <div class="d-flex justify-content-center m-5">
             <a class="btn text-light" href="{{ route('register') }}" role="button"
                 style="background-color: #3b1f4b;">
@@ -204,9 +199,8 @@
         </div>
     </section>
 
-
     <!-- Kunjungan sebelumnya -->
-    {{-- <div class="container mt-5">
+    <div class="container mt-5">
         <h2 class="fs-4 fw-bold">Siapa Saja Yang Pernah <br />Berkunjung</h2>
         <div id="kunjungan" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
@@ -239,24 +233,20 @@
                                 </div>
                             </div>
                         </div>
+                        {{-- <div class="col-sm-3">
+                            <div class="card shadow">
+                                <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 3">
+                                <div class="card-body">
+                                    <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
+                                    <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
+                                </div>
+                            </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
-            <!-- Controls -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#kunjungan" data-bs-slide="prev">
-                <span aria-hidden="true">
-                    <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
-                </span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#kunjungan" data-bs-slide="next">
-                <span aria-hidden="true">
-                    <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
-                </span>
-                <span class="visually-hidden">Next</span>
-            </button>
         </div>
-    </div> --}}
+    </div>
 
     <!-- Komentar -->
     <div class="container my-5">

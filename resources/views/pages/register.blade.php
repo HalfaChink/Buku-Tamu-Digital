@@ -40,7 +40,7 @@ Masukan Detail Kunjungan
     <textarea class="form-control" name="komentar" id="exampleFormControlTextarea1" rows="3" style="border: 1px solid #FF5A5A" required></textarea>
   </div>
   <div class="d-flex justify-content-end">
-    <button class="btn me-md-2 text-light font-weight-bold" type="submit" style="background-color: rgb(59, 32, 75)"><a class="text-decoration-none text-light">Submit</a></button>
+    <button class="btn me-md-2 text-light font-weight-bold" type="submit" style="background-color: rgb(59, 32, 75); margin: 20px;"><a class="text-decoration-none text-light">Submit</a></button>
   </div>
 </form>
 @endsection
