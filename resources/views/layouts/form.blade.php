@@ -26,6 +26,7 @@
             .card{
                 border-top-left-radius: 70px;
                 border-top-right-radius: 70px;
+                height: 78vh;
             }
             .card-body{
                 margin-top: 50px;

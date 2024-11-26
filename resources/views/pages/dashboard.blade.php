@@ -82,12 +82,21 @@
             #tabel td:nth-child(2){
                 width: 15%;
             }
-            #tabel th:nth-child(3),
+            /* #tabel th:nth-child(3), */
             #tabel td:nth-child(3) {
                 width: 15%;  
             }
             #hari-ini p{
-                font-size: 15px;
+                font-size: 13px;
+            }
+            th{
+                font-size: 10px;
+            }
+            #title{
+                margin-bottom: 20px;
+            }
+            .card-body #buton{
+                width: 250px;
             }
         }
 
@@ -206,20 +215,20 @@
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row justify-content-center my-3">
-                        <div class="col-sm-3 sm-md-5">
+                        <div id="title" class="col-sm-3 sm-md-5">
                             <div class="card shadow">
                                 <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 1">
                                 <div class="card-body">
-                                    <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
+                                    <button id="buton" type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
                                     <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-3">
+                        <div id="title" class="col-sm-3">
                             <div class="card shadow">
                                 <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 2">
                                 <div class="card-body">
-                                    <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
+                                    <button id="buton" type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
                                     <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
                                 </div>
                             </div>
@@ -228,7 +237,7 @@
                             <div class="card shadow">
                                 <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 3">
                                 <div class="card-body">
-                                    <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
+                                    <button id="buton" type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
                                     <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
                                 </div>
                             </div>

@@ -31,6 +31,10 @@ Masukan Detail Kunjungan
     <label class="form-label" for="jumlah_pengunjung">Jumlah Pengunjung</label>
     <input type="number" name="jumlah_pengunjung" id="jumlah_pengunjung" class="form-control" style="border: 1px solid #FF5A5A" required />
   </div>
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="Tambahkan_file">Tambahkan file</label>
+    <input type="file" name="Tambahkan_file" id="Tambahkan_file" class="form-control p-1" style="border: 1px solid #FF5A5A" required />
+  </div>
   <div data-mdb-input-init class="form-outline mb-2">
     <label for="exampleFormControlTextarea1" class="form-label">Tujuan</label>
     <textarea class="form-control" name="tujuan_detail" id="exampleFormControlTextarea1" rows="3" style="border: 1px solid #FF5A5A" required></textarea>
