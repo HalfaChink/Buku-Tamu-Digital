@@ -66,40 +66,47 @@
             padding: 20px;
             border: 1px solid #FF5A5A;
         }
+
         /* .carousel-item img{
             width: 25%;
             /* height: 15%; */
 
         @media screen and (max-width: 576px) {
-            #tabel{
+            #tabel {
                 width: 100%;
             }
+
             #tabel th:first-child,
-            #tabel td:first-child{
+            #tabel td:first-child {
                 width: 5%;
             }
+
             #tabel th:nth-child(2),
-            #tabel td:nth-child(2){
+            #tabel td:nth-child(2) {
                 width: 15%;
             }
+
             /* #tabel th:nth-child(3), */
             #tabel td:nth-child(3) {
-                width: 15%;  
+                width: 15%;
             }
-            #hari-ini p{
+
+            #hari-ini p {
                 font-size: 13px;
             }
-            th{
+
+            th {
                 font-size: 10px;
             }
-            #title{
+
+            #title {
                 margin-bottom: 20px;
             }
-            .card-body #buton{
+
+            .card-body #buton {
                 width: 250px;
             }
         }
-
     </style>
 </head>
 
@@ -139,39 +146,39 @@
         <div class="container">
 
             <!-- Carousell -->
-        <div id="image" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                @foreach($carouselImages as $index => $carousel)
+            <div id="image" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    @foreach($carouselImages as $index => $carousel)
                     <button type="button" data-bs-target="#image" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-current="true" aria-label="Slide {{ $index + 1 }}"></button>
-                @endforeach
-            </div>
-            <div class="carousel-inner shadow-lg p-0 rounded-3 border mx-auto" style="max-width: 80%; height: auto;">
-                @foreach($carouselImages as $index => $carousel)
+                    @endforeach
+                </div>
+                <div class="carousel-inner shadow-lg p-0 rounded-3 border mx-auto" style="max-width: 80%; height: auto;">
+                    @foreach($carouselImages as $index => $carousel)
                     <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                         <img src="{{ asset('admin/img/' . $carousel->image) }}" class="d-block w-100" alt="carousel image" style="height: auto; max-height: 500px; ">
                     </div>
-                @endforeach
+                    @endforeach
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#image" data-bs-slide="prev">
+                    <span aria-hidden="true">
+                        <i style="color: #3B1F4B; margin-left: -30px;" class="bx bx-chevron-left bx-lg"></i>
+                    </span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#image" data-bs-slide="next">
+                    <span aria-hidden="true">
+                        <i style="color: #3B1F4B; margin-right: -30px;" class="bx bx-chevron-right bx-lg"></i>
+                    </span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#image" data-bs-slide="prev">
-                <span aria-hidden="true">
-                    <i style="color: #3B1F4B; margin-left: -30px;" class="bx bx-chevron-left bx-lg"></i>
-                </span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#image" data-bs-slide="next">
-                <span aria-hidden="true">
-                    <i style="color: #3B1F4B; margin-right: -30px;" class="bx bx-chevron-right bx-lg"></i>
-                </span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
 
-        <div class="d-flex justify-content-center m-5">
-            <a class="btn text-light" href="{{ route('register') }}" role="button"
-                style="background-color: #3b1f4b;">
-                <h3 class="fs-5">Berkunjung</h3>
-            </a>
-        </div>
+            <div class="d-flex justify-content-center m-5">
+                <a class="btn text-light" href="{{ route('register') }}" role="button"
+                    style="background-color: #3b1f4b;">
+                    <h3 class="fs-5">Berkunjung</h3>
+                </a>
+            </div>
         </div>
 
         <!-- Register -->
@@ -211,51 +218,27 @@
     <!-- Kunjungan sebelumnya -->
     <div class="container mt-5">
         <h2 class="fs-4 fw-bold">Siapa Saja Yang Pernah <br />Berkunjung</h2>
-        <div id="kunjungan" class="carousel slide" data-ride="carousel">
+        <div id="kunjungan" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active">
+                @foreach($previousVisitors as $index => $visitor)
+                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                     <div class="row justify-content-center my-3">
-                        <div id="title" class="col-sm-3 sm-md-5">
+                        <div class="col-sm-3 sm-md-5">
                             <div class="card shadow">
-                                <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 1">
+                                <img src="{{ asset('admin/img/' . $visitor->image) }}" class="card-img-top" alt="Card {{ $index + 1 }}">
                                 <div class="card-body">
-                                    <button id="buton" type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
+                                    <button type="button" class="btn px-5 m-1 fw-bold" style="background-color: #FFB91E;">{{ $visitor->visit_text }}</button>
                                     <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
                                 </div>
                             </div>
                         </div>
-                        <div id="title" class="col-sm-3">
-                            <div class="card shadow">
-                                <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 2">
-                                <div class="card-body">
-                                    <button id="buton" type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
-                                    <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-3">
-                            <div class="card shadow">
-                                <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 3">
-                                <div class="card-body">
-                                    <button id="buton" type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
-                                    <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
-                                </div>
-                            </div>
-                        </div>
-                        {{-- <div class="col-sm-3">
-                            <div class="card shadow">
-                                <img src="https://media.istockphoto.com/id/1442252234/id/foto/kolega-yang-ramah-duduk-di-kursi-berlengan-menikmati-pembicaraan-di-ruang-kantor.jpg?s=1024x1024&w=is&k=20&c=6y-DRKheiW5KFEmio-azMl6uLvsAAw8Gupcr1JP3Fdo=" class="card-img-top" alt="Card 3">
-                                <div class="card-body">
-                                    <button type="button" class="btn px-5 m-1 fw-bold" @style("background-color: #FFB91E;")>PT.Yadika</button>
-                                    <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </div>
+
 
     <!-- Komentar -->
     <div class="container my-5">

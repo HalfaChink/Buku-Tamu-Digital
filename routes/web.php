@@ -25,9 +25,12 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::post('/adminsignup', [AdminController::class, 'signup'])->name('admin.signup');
     Route::post('/carousel/store', [EditController::class, 'store'])->name('carousel.store');
     Route::post('/carousel/update/{id}', [EditController::class, 'update'])->name('carousel.update');
+    Route::post('/visitor/store', [EditController::class, 'store'])->name('visitor.store');
     Route::delete('/carousel/destroy/{id}', [EditController::class, 'destroy'])->name('carousel.destroy');
     Route::delete('/pengunjung/{id}', [UserController::class, 'destroy'])->name('pengunjung.destroy');
     Route::delete('/admins/{id}', [AdminController::class, 'destroy'])->name('admin.destroy');
+    Route::delete('/visitor/destroy/{id}', [EditController::class, 'destroy'])->name('visitor.destroy');
+    Route::put('/visitor/update/{id}', [EditController::class, 'update'])->name('visitor.update');
 });
 
 Route::post('/pengunjung/store', [UserController::class, 'store'])->name('pengunjung.store');

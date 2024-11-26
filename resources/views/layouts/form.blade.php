@@ -15,20 +15,21 @@
     <title>
         @yield('title')
     </title>
-
     <style>
-        @media screen and (max-width: 576px){
-            img{
+        @media screen and (max-width: 576px) {
+            img {
                 width: 150px;
                 margin-left: auto;
                 margin-right: auto;
             }
-            .card{
+
+            .card {
                 border-top-left-radius: 70px;
                 border-top-right-radius: 70px;
                 height: 78vh;
             }
-            .card-body{
+
+            .card-body {
                 margin-top: 50px;
             }
         }
@@ -55,6 +56,5 @@
         </div>
     </div>
 </body>
-
 
 </html>
