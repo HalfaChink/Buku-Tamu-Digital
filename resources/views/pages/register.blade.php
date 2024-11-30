@@ -33,7 +33,7 @@ Masukan Detail Kunjungan
   </div>
   <div data-mdb-input-init class="form-outline mb-4">
     <label class="form-label" for="Tambahkan_file">Tambahkan file <span style="color: red">*</span></label>
-    <input type="file" name="Tambahkan_file" id="Tambahkan_file" class="form-control p-1" style="border: 1px solid #FF5A5A" required />
+    <input type="file" name="Tambahkan_file" id="Tambahkan_file" class="form-control p-1" style="border: 1px solid #FF5A5A" />
   </div>
   <div data-mdb-input-init class="form-outline mb-2">
     <label for="exampleFormControlTextarea1" class="form-label">Tujuan</label>
