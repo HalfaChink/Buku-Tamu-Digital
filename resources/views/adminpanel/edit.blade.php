@@ -54,7 +54,7 @@ Edit
         <button type="submit" class="btn btn-success">Tambahkan Image</button>
     </form>
 
-    <h4>Siapa Saja Yang Pernah Berkunjung</h4>
+    <h4 class="mt-5">Siapa Saja Yang Pernah Berkunjung</h4>
     <div class="row mb-4">
         @foreach($visitorData as $visitor)
         <div class="col-md-4">
@@ -62,7 +62,7 @@ Edit
             <form action="{{ route('visitor.update', $visitor->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
-                <input type="file" name="image" class="form-control mb-2">
+                <input type="file" name="image" class="form-control mb-2 p-1">
                 <input type="text" name="visit_text" class="form-control mb-2" value="{{ $visitor->visit_text }}">
                 <button type="submit" class="btn btn-primary">Update Visitor</button>
             </form>
@@ -78,7 +78,7 @@ Edit
     <h4>Tambah Visitor Baru</h4>
     <form action="{{ route('visitor.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <input type="file" name="image" class="form-control mb-2">
+        <input type="file" name="image" class="form-control mb-2 p-1">
         <input type="text" name="visit_text" class="form-control mb-2" placeholder="Enter visit text">
         <button type="submit" class="btn btn-success">Tambahkan Visitor</button>
     </form>

@@ -66,11 +66,14 @@
             padding: 20px;
             border: 1px solid #FF5A5A;
         }
-
-        /* .carousel-item img{
-            width: 25%;
-            /* height: 15%; */
-
+        
+         .card-body button h6{
+            width: 100%;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            color: #f8f9fa;
+         }  
         @media screen and (max-width: 576px) {
             #tabel {
                 width: 100%;
@@ -102,9 +105,13 @@
             #title {
                 margin-bottom: 20px;
             }
-
-            .card-body #buton {
-                width: 250px;
+            .card-body button{
+           
+            }
+            .card{
+                width: 300px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     </style>
@@ -226,9 +233,9 @@
                         <div class="col-sm-3 sm-md-5">
                             <div class="card shadow">
                                 <img src="{{ asset('admin/img/' . $visitor->image) }}" class="card-img-top" alt="Card {{ $index + 1 }}">
+                                <hr>
                                 <div class="card-body">
-                                    <button type="button" class="btn px-5 m-1 fw-bold" style="background-color: #FFB91E;">{{ $visitor->visit_text }}</button>
-                                    <button type="button" class="btn px-3 py-3" @style("background-color: #FF5454;")></button>
+                                    <button type="button" class="btn px-5" style="background-color: #3b1f4b"><h6>{{ $visitor->visit_text }}</h6></button>
                                 </div>
                             </div>
                         </div>
