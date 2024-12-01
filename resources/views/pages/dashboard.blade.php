@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="{{ asset('admin/img/logo.png') }}" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('./sass/dashboard.scss') }}">
@@ -66,7 +67,6 @@
             padding: 20px;
             border: 1px solid #FF5A5A;
         }
-        
          .card-body button h6{
             width: 100%;
             font-size: 12px;
@@ -104,9 +104,6 @@
 
             #title {
                 margin-bottom: 20px;
-            }
-            .card-body button{
-           
             }
             .card{
                 width: 300px;
@@ -225,14 +222,15 @@
     <!-- Kunjungan sebelumnya -->
     <div class="container mt-5">
         <h2 class="fs-4 fw-bold">Siapa Saja Yang Pernah <br />Berkunjung</h2>
-        <div id="kunjungan" class="carousel slide" data-bs-ride="carousel">
+        {{-- <div id="kunjungan" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                @foreach($previousVisitors as $index => $visitor)
-                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                    <div class="row justify-content-center my-3">
+                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}"> --}}
+                    
+                    {{-- @foreach($previousVisitors as $index => $visitor)
+                    <div class="my-3 {{ $index == 0 ? 'active' : '' }}">
                         <div class="col-sm-3 sm-md-5">
-                            <div class="card shadow">
-                                <img src="{{ asset('admin/img/' . $visitor->image) }}" class="card-img-top" alt="Card {{ $index + 1 }}">
+                        <div class="card shadow">
+                            <img src="{{ asset('admin/img/' . $visitor->image) }}" class="" alt="Card {{ $index + 1 }}">
                                 <hr>
                                 <div class="card-body">
                                     <button type="button" class="btn px-5" style="background-color: #3b1f4b"><h6>{{ $visitor->visit_text }}</h6></button>
@@ -240,10 +238,27 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                @endforeach
+                    @endforeach --}}
+                {{-- </div>
             </div>
+        </div> --}}
+
+        <div class="row d-flex justify-content-evenly">
+              @foreach($previousVisitors as $index => $visitor)
+                <div class="col-sm-3 sm-md-5 my-4">
+                    <div class="card">
+                            <img src="{{ asset('admin/img/' . $visitor->image) }}" class="" alt="Card {{ $index + 1 }}">
+                            <hr>
+                        <div class="card-body">
+                             <button type="button" class="btn btn-custom px-md-0 px-lg-5 px-5 w-100 w-md-auto " style="background-color: #3b1f4b">
+                                <h6 class="mb-0 text-center">{{ $visitor->visit_text }}</h6>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
         </div>
+
     </div>
 
 

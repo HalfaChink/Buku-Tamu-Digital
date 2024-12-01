@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{{ asset('admin/img/logo.png') }}" type="image/x-icon">
     <!-- Custom styles for this template-->
     <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <!-- box icons -->
