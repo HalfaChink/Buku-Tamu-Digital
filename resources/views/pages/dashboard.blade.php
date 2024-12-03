@@ -190,13 +190,13 @@
     <!-- Content -->
     <section id="content">
         <!-- Kunjungan hari ini -->
-        <div id="hari-ini" class="p-5" style="background-color: #3b1f4b; color: #FFB91E;">
+        <div id="hari-ini" class="p-5" style="background-color:#404040; color: #FFB91E;">
             <div class="container">
                 <div class="d-flex fs-4 justify-content-between ">
                     <p class="fw-bold">Kunjungan Hari Ini</p>
                     <p class="fw-bold">{{ \Carbon\Carbon::now()->format('d F Y') }}</p>
                 </div>
-                <table id="tabel" class="mx-auto bg-white m-4" style="color: #3b1f4b;">
+                <table id="tabel" class="mx-auto bg-white m-4" style="color: #404040;">
                     <thead>
                         <tr>
                             <th>No</th>

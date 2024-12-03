@@ -41,7 +41,7 @@ class UserController extends Controller
             'no_tlp' => 'required|numeric',
             'jumlah_pengunjung' => 'required|numeric',
             'tujuan_detail' => 'required|string|max:1000',
-            'komentar' => 'required|string|max:1000',
+            'komentar' => 'string|max:1000',
         ]);
 
         Pengunjung::create($validatedData);
