@@ -114,7 +114,6 @@
     </style>
 </head>
 
-
 <body>
     <!-- Header -->
     <section id="header">
@@ -261,7 +260,6 @@
 
     </div>
 
-
     <!-- Komentar -->
     <div class="container my-5">
         <h2 class="text-center mb-4">Komentar Pengunjung Hari Ini</h2>
@@ -295,7 +293,6 @@
         </div>
     </div>
 
-
     </section>
 
     <!--  Footer -->
@@ -313,5 +310,4 @@
         crossorigin="anonymous"></script>
 
 </body>
-
 </html>
