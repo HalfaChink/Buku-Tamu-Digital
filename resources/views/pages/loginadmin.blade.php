@@ -18,17 +18,17 @@ Login Admin
 <form action="{{ route('login.submit') }}" method="post">
   @csrf
   <div data-mdb-input-init class="form-outline mb-2">
-    <label class="form-label" for="username">Username</label>
-    <input type="text" name="username" id="username" class="form-control" value="{{ old('username') }}" style="border: 1px solid #FF5A5A" />
+    <label class="form-label text-dark" for="username">Username</label>
+    <input type="text" name="username" id="username" class="form-control" value="{{ old('username') }}" style="border: 1px solid #808080" />
   </div>
 
   <div data-mdb-input-init class="form-outline mb-2">
-    <label class="form-label" for="password">Password</label>
-    <input type="password" name="password" id="password" class="form-control" style="border: 1px solid #FF5A5A" />
+    <label class="form-label text-dark" for="password">Password</label>
+    <input type="password" name="password" id="password" class="form-control" style="border: 1px solid #808080" />
   </div>
 
   <div class="d-flex justify-content-end">
-    <button class="btn text-light font-weight-bold" type="submit" style="background-color: rgb(59, 32, 75)">Login</button>
+    <button class="btn text-light font-weight-bold" type="submit" style="background-color: #404040;">Login</button>
   </div>
 </form>
 @endsection

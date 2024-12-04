@@ -17,57 +17,70 @@
             font-family: 'poppins';
         }
 
+        /* button register */
+        #register{
+            background-color: #404040;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #register:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px #c0c0c0;
+        }
+
+        /* css table */
         #tabel {
             border-collapse: collapse;
             width: 100%;
             margin: 20px 0;
         }
-
         #tabel th,
         #tabel td {
             padding: 10px;
             text-align: center;
-            border: 2px solid #3b204b;
+            border: 2px solid #404040;
             font-weight: 500;
         }
-
         #tabel th {
-            background-color: #FF5A5A;
-            color: white;
+            background-color: #404040;
+            color: #3B1F4B;
         }
-
         #tabel td {
-            background-color: white;
+            background-color: #3B1F4B;
         }
-
         #tabel th:first-child,
         #tabel td:first-child {
-            background-color: #FF5A5A;
-            color: white;
+            background-color: #c0c0c0;
+            color: #000000;
             width: 10%;
         }
-
         #tabel th:nth-child(2),
         #tabel td:nth-child(2) {
             width: 45%;
-            background-color: white;
-            color: #3B1F4B;
+            background-color: #f8f9fa;
+            color: #000000;
         }
-
         #tabel th:nth-child(3),
         #tabel td:nth-child(3) {
             width: 45%;
-            background-color: white;
-            color: #3B1F4B;
-        }
-
-        .comment-card {
             background-color: #f8f9fa;
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid #FF5A5A;
+            color: #000000;
         }
 
+        /* css kunjungan */
+        .btn-custom{
+            background-color: #404040;
+        }
+        .btn-custom:hover{
+            background-color: #808080;
+            box-shadow: 5px 5px 5px #404040;
+        }
+        .card{
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover{
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px #c0c0c0;
+        }
         .card-body button h6 {
             width: 100%;
             font-size: 12px;
@@ -76,38 +89,48 @@
             color: #f8f9fa;
         }
 
+        /* css komentar */
+        .comment-card {
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid #c0c0c0;
+        }
+
+        /* css footer */
+        #footer{
+            background-color: #404040;
+        }
+
+        /* responsive mobile */
         @media screen and (max-width: 576px) {
+            /* tabel responsive css */
             #tabel {
                 width: 100%;
             }
-
             #tabel th:first-child,
             #tabel td:first-child {
                 width: 5%;
             }
-
             #tabel th:nth-child(2),
             #tabel td:nth-child(2) {
                 width: 15%;
             }
-
             /* #tabel th:nth-child(3), */
             #tabel td:nth-child(3) {
                 width: 15%;
             }
-
             #hari-ini p {
                 font-size: 13px;
             }
-
             th {
                 font-size: 10px;
             }
-
             #title {
                 margin-bottom: 20px;
             }
 
+            /* kunjungan responsive css */
             .card {
                 width: 300px;
                 margin-left: auto;
@@ -135,7 +158,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-light px-3 py-2" href="#" id="navbarDropdown"
                                 role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                                style="background-color: rgb(59, 32, 75); border-radius: 15px;">
+                                style="background-color: #404040; border-radius: 15px;">
                                 Menu
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -150,19 +173,22 @@
 
         <!-- Hero -->
         <div class="container">
-
             <!-- Carousell -->
             <div id="image" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    @foreach($carouselImages as $index => $carousel)
-                    <button type="button" data-bs-target="#image" data-bs-slide-to="{{ $index }}" class="{{ $index == 0 ? 'active' : '' }}" aria-current="true" aria-label="Slide {{ $index + 1 }}"></button>
+                    @foreach ($carouselImages as $index => $carousel)
+                        <button type="button" data-bs-target="#image" data-bs-slide-to="{{ $index }}"
+                            class="{{ $index == 0 ? 'active' : '' }}" aria-current="true"
+                            aria-label="Slide {{ $index + 1 }}"></button>
                     @endforeach
                 </div>
-                <div class="carousel-inner shadow-lg p-0 rounded-3 border mx-auto" style="max-width: 80%; height: auto;">
-                    @foreach($carouselImages as $index => $carousel)
-                    <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                        <img src="{{ asset('admin/img/' . $carousel->image) }}" class="d-block w-100" alt="carousel image" style="height: auto; max-height: 500px; ">
-                    </div>
+                <div class="carousel-inner shadow-lg p-0 rounded-3 border mx-auto"
+                    style="max-width: 80%; height: auto;">
+                    @foreach ($carouselImages as $index => $carousel)
+                        <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                            <img src="{{ asset('admin/img/' . $carousel->image) }}" class="d-block w-100"
+                                alt="carousel image" style="height: auto; max-height: 500px; ">
+                        </div>
                     @endforeach
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#image" data-bs-slide="prev">
@@ -178,28 +204,25 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-
+                 <!-- Register -->
             <div class="d-flex justify-content-center m-5">
-                <a class="btn text-light" href="{{ route('register') }}" role="button"
-                    style="background-color: #3b1f4b;">
+                <a id="register" class="btn text-light" href="{{ route('register') }}" role="button">
                     <h3 class="fs-5">Berkunjung</h3>
                 </a>
             </div>
         </div>
-
-        <!-- Register -->
     </section>
 
     <!-- Content -->
     <section id="content">
         <!-- Kunjungan hari ini -->
-        <div id="hari-ini" class="p-5" style="background-color:#3b1f4b; color: #FFB91E;">
+        <div id="hari-ini" class="p-5" style="background-color:#404040; color: #ffffff;">
             <div class="container">
                 <div class="d-flex fs-4 justify-content-between ">
                     <p class="fw-bold">Kunjungan Hari Ini</p>
                     <p class="fw-bold">{{ \Carbon\Carbon::now()->format('d F Y') }}</p>
                 </div>
-                <table id="tabel" class="mx-auto bg-white m-4" style="color: #3b1f4b;">
+                <table id="tabel" class="mx-auto bg-white m-4" style="color: #000000;">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -208,12 +231,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($todayVisitors as $index => $visitor)
-                        <tr>
-                            <td>{{ $index + 1 }}</td>
-                            <td>{{ $visitor->nama }}</td>
-                            <td>{{ $visitor->tujuan_detail }}</td>
-                        </tr>
+                        @foreach ($todayVisitors as $index => $visitor)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $visitor->nama }}</td>
+                                <td>{{ $visitor->tujuan_detail }}</td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
@@ -224,44 +247,22 @@
     <!-- Kunjungan sebelumnya -->
     <div class="container mt-5">
         <h2 class="fs-4 fw-bold">Siapa Saja Yang Pernah <br />Berkunjung</h2>
-        {{-- <div id="kunjungan" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item {{ $index == 0 ? 'active' : '' }}"> --}}
-
-        {{-- @foreach($previousVisitors as $index => $visitor)
-                    <div class="my-3 {{ $index == 0 ? 'active' : '' }}">
-        <div class="col-sm-3 sm-md-5">
-            <div class="card shadow">
-                <img src="{{ asset('admin/img/' . $visitor->image) }}" class="" alt="Card {{ $index + 1 }}">
-                <hr>
-                <div class="card-body">
-                    <button type="button" class="btn px-5" style="background-color: #3b1f4b">
-                        <h6>{{ $visitor->visit_text }}</h6>
-                    </button>
+        <div class="row d-flex justify-content-evenly">
+            @foreach ($previousVisitors as $index => $visitor)
+                <div class="col-sm-3 sm-md-5 my-4">
+                    <div class="card">
+                        <img src="{{ asset('admin/img/' . $visitor->image) }}" class=""
+                            alt="Card {{ $index + 1 }}">
+                        <hr>
+                        <div class="card-body">
+                            <button type="button" class="btn btn-custom px-md-0 px-lg-5 px-5 w-100 w-md-auto ">
+                                <h6 class="mb-0 text-center">{{ $visitor->visit_text }}</h6>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            @endforeach
         </div>
-    </div>
-    @endforeach --}}
-    {{-- </div>
-            </div>
-        </div> --}}
-
-    <div class="row d-flex justify-content-evenly">
-        @foreach($previousVisitors as $index => $visitor)
-        <div class="col-sm-3 sm-md-5 my-4">
-            <div class="card">
-                <img src="{{ asset('admin/img/' . $visitor->image) }}" class="" alt="Card {{ $index + 1 }}">
-                <hr>
-                <div class="card-body">
-                    <button type="button" class="btn btn-custom px-md-0 px-lg-5 px-5 w-100 w-md-auto " style="background-color: #3b1f4b">
-                        <h6 class="mb-0 text-center">{{ $visitor->visit_text }}</h6>
-                    </button>
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
 
     </div>
 
@@ -271,41 +272,41 @@
         <div id="komen" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 @forelse ($todayVisitors as $key => $visitor)
-                <div class="carousel-item @if ($key == 0) active @endif">
-                    <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
-                        <div class="comment-card">
-                            @if ($visitor->komentar)
-                            <p class="card-text">{{ $visitor->komentar }}</p>
-                            @else
-                            <p class="card-text">Tidak ada komentar dari pengunjung ini.</p>
-                            @endif
-                            <p class="text-right" style="font-weight: bold;">- {{ $visitor->nama }}</p>
+                    <div class="carousel-item @if ($key == 0) active @endif">
+                        <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
+                            <div class="comment-card">
+                                @if ($visitor->komentar)
+                                    <p class="card-text">{{ $visitor->komentar }}</p>
+                                @else
+                                    <p class="card-text">Tidak ada komentar dari pengunjung ini.</p>
+                                @endif
+                                <p class="text-right" style="font-weight: bold;">- {{ $visitor->nama }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @empty
-                <div class="carousel-item active">
-                    <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
-                        <div class="comment-card">
-                            <p class="card-text">Belum ada komentar untuk hari ini.</p>
+                    <div class="carousel-item active">
+                        <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
+                            <div class="comment-card">
+                                <p class="card-text">Belum ada komentar untuk hari ini.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforelse
             </div>
             @if ($todayVisitors->count() > 1)
-            <button class="carousel-control-prev" type="button" data-bs-target="#komen" data-bs-slide="prev">
-                <span aria-hidden="true">
-                    <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
-                </span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#komen" data-bs-slide="next">
-                <span aria-hidden="true">
-                    <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
-                </span>
-                <span class="visually-hidden">Next</span>
-            </button>
+                <button class="carousel-control-prev" type="button" data-bs-target="#komen" data-bs-slide="prev">
+                    <span aria-hidden="true">
+                        <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
+                    </span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#komen" data-bs-slide="next">
+                    <span aria-hidden="true">
+                        <i style="color: #3B1F4B;" class="bx bx-chevron-right bx-lg"></i>
+                    </span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             @endif
         </div>
     </div>
@@ -314,17 +315,17 @@
 
     <!--  Footer -->
     <section id="footer">
-        <div class="d-flex justify-content-center align-items-center p-5" style="background-color: rgb(59, 32, 75)">
+        <div class="d-flex justify-content-center align-items-center p-5">
             <img src="{{ asset('admin/img/logo-header.png') }}" alt="PT.artristik Studio Bandung" width="300">
         </div>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-        crossorigin="anonymous"></script>
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
+    </script>
 
 </body>
 

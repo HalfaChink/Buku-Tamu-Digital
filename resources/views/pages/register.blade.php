@@ -12,39 +12,34 @@ Masukan Detail Kunjungan
 <form method="post" action="{{ route('pengunjung.store') }}">
   @csrf
   <div data-mdb-input-init class="form-outline mb-2">
-    <label class="form-label" for="nama">Nama <span class="text-danger">*</span></label>
-    <input type="text" name="nama" id="nama" class="form-control" style="border: 1px solid #FF5A5A" required />
+    <label class="form-label text-dark" for="nama">Nama <span class="text-danger">*</span></label>
+    <input type="text" name="nama" id="nama" class="form-control" style="border: 1px solid #808080" required />
   </div>
   <div data-mdb-input-init class="form-outline mb-2">
-    <label class="form-label" for="asal">Asal <span class="text-danger">*</span></label>
-    <input type="text" name="asal" id="asal" class="form-control" style="border: 1px solid #FF5A5A" required />
+    <label class="form-label text-dark" for="asal">Instansi <span class="text-danger">*</span></label>
+    <input type="text" name="asal" id="asal" class="form-control" style="border: 1px solid #808080" required />
   </div>
   <div data-mdb-input-init class="form-outline-danger mb-2">
-    <label class="form-label" for="email">Email <span class="text-danger">*</span></label>
-    <input type="email" name="email" id="email" class="form-control" style="border: 1px solid #FF5A5A" required />
+    <label class="form-label text-dark" for="email">Email <span class="text-danger">*</span></label>
+    <input type="email" name="email" id="email" class="form-control" style="border: 1px solid #808080" required />
   </div>
   <div data-mdb-input-init class="form-outline mb-2">
-    <label class="form-label" for="no_tlp">NO.TLP <span class="text-danger">*</span></label>
-    <input type="number" name="no_tlp" id="no_tlp" class="form-control" style="border: 1px solid #FF5A5A " required />
+    <label class="form-label text-dark" for="no_tlp">NO.TLP <span class="text-danger">*</span></label>
+    <input type="number" name="no_tlp" id="no_tlp" class="form-control" style="border: 1px solid #808080" required />
   </div>
   <div data-mdb-input-init class="form-outline mb-4">
-    <label class="form-label" for="jumlah_pengunjung">Jumlah Pengunjung <span class="text-danger">*</span></label>
-    <input type="number" name="jumlah_pengunjung" id="jumlah_pengunjung" class="form-control" style="border: 1px solid #FF5A5A" required />
+    <label class="form-label text-dark" for="jumlah_pengunjung">Jumlah Pengunjung <span class="text-danger">*</span></label>
+    <input type="number" name="jumlah_pengunjung" id="jumlah_pengunjung" class="form-control" style="border: 1px solid #808080" required />
   </div>
-  {{-- <div data-mdb-input-init class="form-outline mb-4">
-    <label class="form-label" for="Tambahkan_file">Tambahkan file</label>
-    <input type="file" name="Tambahkan_file" id="Tambahkan_file" class="form-control p-1" style="border: 1px solid #FF5A5A"/>
-  </div> --}}
   <div data-mdb-input-init class="form-outline mb-2">
-    <label for="exampleFormControlTextarea1" class="form-label">Tujuan <span class="text-danger">*</span></label>
-    <textarea class="form-control" name="tujuan_detail" id="exampleFormControlTextarea1" rows="3" style="border: 1px solid #FF5A5A" required></textarea>
+    <label for="exampleFormControlTextarea1" class="form-label text-dark">Tujuan <span class="text-danger">*</span></label>
+    <textarea class="form-control" name="tujuan_detail" id="exampleFormControlTextarea1" rows="3" style="border: 1px solid #808080" required></textarea>
   </div>
   <div data-mdb-input-init class="form-outline-danger mb-2">
-    <label for="exampleFormControlTextarea1" class="form-label">Komentar</label>
-    <textarea class="form-control" name="komentar" id="exampleFormControlTextarea1" rows="3" style="border: 1px solid #FF5A5A"></textarea>
-  </div>
+    <label for="exampleFormControlTextarea1" class="form-label text-dark">Komentar</label>
+    <textarea class="form-control" name="komentar" id="exampleFormControlTextarea1" rows="3" style="border: 1px solid #808080"></textarea></div>
   <div class="d-flex justify-content-end">
-    <button class="btn me-md-2 text-light font-weight-bold" type="submit" style="background-color: rgb(59, 32, 75); margin: 20px;"><a class="text-decoration-none text-light">Submit</a></button>
+    <button class="btn me-md-2 text-light font-weight-bold" type="submit" style="background-color: #808080; margin: 20px;"><a class="text-decoration-none text-light">Submit</a></button>
   </div>
 </form>
 @if (session('success') || session('error'))
