@@ -13,11 +13,44 @@
     <link href="{{ asset('admin/css/sb-admin-2.min.css') }}" rel="stylesheet">
     <!-- box icons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
     @vite('resources/css/form.css')
     <title>
         @yield('title')
     </title>
     <style>
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 999;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .popup-content p {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        #popup-close {
+            margin-top: 10px;
+        }
+
         @media screen and (max-width: 576px) {
             img {
                 width: 150px;
@@ -36,6 +69,7 @@
             }
         }
     </style>
+
 </head>
 
 <body>
@@ -57,6 +91,21 @@
             </div>
         </div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const closeButton = document.getElementById('popup-close');
+            const popupOverlay = document.getElementById('popup-overlay');
+            const popupAlert = document.getElementById('popup-alert');
+
+            if (closeButton) {
+                closeButton.addEventListener('click', function() {
+                    popupOverlay.style.display = 'none';
+                    popupAlert.style.display = 'none';
+                });
+            }
+        });
+    </script>
+
 </body>
 
 </html>

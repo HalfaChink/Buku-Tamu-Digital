@@ -41,13 +41,21 @@ class UserController extends Controller
             'no_tlp' => 'required|numeric',
             'jumlah_pengunjung' => 'required|numeric',
             'tujuan_detail' => 'required|string|max:1000',
-            'komentar' => 'string|max:1000',
+            'komentar' => 'nullable|string|max:1000',
         ]);
+        if (!$request->has('komentar')) {
+            $validatedData['komentar'] = null;
+        }
 
-        Pengunjung::create($validatedData);
-
-        return redirect()->route('register')->with('success', 'Data berhasil disimpan!');
+        try {
+            Pengunjung::create($validatedData);
+            return redirect()->route('register')->with('success', 'Data berhasil disimpan!');
+        } catch (\Exception $e) {
+            return redirect()->route('register')->with('error', 'Data gagal disimpan! Silakan coba lagi.');
+        }
     }
+
+
 
     public function destroy($id)
     {

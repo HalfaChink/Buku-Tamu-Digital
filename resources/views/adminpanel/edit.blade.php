@@ -7,22 +7,25 @@ Edit
 @section('content')
 
 <style>
-         button{
-             width: 45%;
-         }
-         .btn-danger{
-            float: right;
-            margin-top: -42px;
+    button {
+        width: 45%;
+    }
+
+    .btn-danger {
+        float: right;
+        margin-top: -42px;
+    }
+
+    @media screen and (max-width: 576px) {
+        button {
+            width: 100%;
         }
-     @media screen and (max-width: 576px){
-        button{
-        width: 100%;
-        }
-        .btn-danger{
+
+        .btn-danger {
             float: none;
             margin-top: 5px;
         }
-     }
+    }
 </style>
 
 <div class="container">
@@ -38,7 +41,7 @@ Edit
                 <input type="file" name="image" class="form-control mb-2 p-1">
                 <button type="submit" class="btn btn-primary">Update Image</button>
             </form>
-            <form action="{{ route('carousel.destroy', $carousel->id) }}" method="POST" class="mt-1">
+            <form action="{{ route('carousel.destroy', $carousel->id) }}" method="POST" class="mt-1" onsubmit="return confirmDelete()">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete Image</button>
@@ -66,7 +69,7 @@ Edit
                 <input type="text" name="visit_text" class="form-control mb-2" value="{{ $visitor->visit_text }}">
                 <button type="submit" class="btn btn-primary">Update Visitor</button>
             </form>
-            <form action="{{ route('visitor.destroy', $visitor->id) }}" method="POST" class="mt-1">
+            <form action="{{ route('visitor.destroy', $visitor->id) }}" method="POST" class="mt-1" onsubmit="return confirmDelete()">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete Visitor</button>
@@ -83,5 +86,15 @@ Edit
         <button type="submit" class="btn btn-success">Tambahkan Visitor</button>
     </form>
 </div>
+
+<script>
+    function confirmDelete() {
+        return confirm("Apakah Anda yakin ingin menghapus data ini?");
+    };
+
+    function confirmUpdate() {
+        return confirm("Apakah Anda yakin ingin memperbarui data ini?");
+    };
+</script>
 
 @endsection

@@ -67,13 +67,15 @@
             padding: 20px;
             border: 1px solid #FF5A5A;
         }
-         .card-body button h6{
+
+        .card-body button h6 {
             width: 100%;
             font-size: 12px;
             font-weight: bold;
             text-align: center;
             color: #f8f9fa;
-         }  
+        }
+
         @media screen and (max-width: 576px) {
             #tabel {
                 width: 100%;
@@ -105,7 +107,8 @@
             #title {
                 margin-bottom: 20px;
             }
-            .card{
+
+            .card {
                 width: 300px;
                 margin-left: auto;
                 margin-right: auto;
@@ -190,13 +193,13 @@
     <!-- Content -->
     <section id="content">
         <!-- Kunjungan hari ini -->
-        <div id="hari-ini" class="p-5" style="background-color:#404040; color: #FFB91E;">
+        <div id="hari-ini" class="p-5" style="background-color:#3b1f4b; color: #FFB91E;">
             <div class="container">
                 <div class="d-flex fs-4 justify-content-between ">
                     <p class="fw-bold">Kunjungan Hari Ini</p>
                     <p class="fw-bold">{{ \Carbon\Carbon::now()->format('d F Y') }}</p>
                 </div>
-                <table id="tabel" class="mx-auto bg-white m-4" style="color: #404040;">
+                <table id="tabel" class="mx-auto bg-white m-4" style="color: #3b1f4b;">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -224,39 +227,41 @@
         {{-- <div id="kunjungan" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item {{ $index == 0 ? 'active' : '' }}"> --}}
-                    
-                    {{-- @foreach($previousVisitors as $index => $visitor)
+
+        {{-- @foreach($previousVisitors as $index => $visitor)
                     <div class="my-3 {{ $index == 0 ? 'active' : '' }}">
-                        <div class="col-sm-3 sm-md-5">
-                        <div class="card shadow">
-                            <img src="{{ asset('admin/img/' . $visitor->image) }}" class="" alt="Card {{ $index + 1 }}">
-                                <hr>
-                                <div class="card-body">
-                                    <button type="button" class="btn px-5" style="background-color: #3b1f4b"><h6>{{ $visitor->visit_text }}</h6></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach --}}
-                {{-- </div>
+        <div class="col-sm-3 sm-md-5">
+            <div class="card shadow">
+                <img src="{{ asset('admin/img/' . $visitor->image) }}" class="" alt="Card {{ $index + 1 }}">
+                <hr>
+                <div class="card-body">
+                    <button type="button" class="btn px-5" style="background-color: #3b1f4b">
+                        <h6>{{ $visitor->visit_text }}</h6>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endforeach --}}
+    {{-- </div>
             </div>
         </div> --}}
 
-        <div class="row d-flex justify-content-evenly">
-              @foreach($previousVisitors as $index => $visitor)
-                <div class="col-sm-3 sm-md-5 my-4">
-                    <div class="card">
-                            <img src="{{ asset('admin/img/' . $visitor->image) }}" class="" alt="Card {{ $index + 1 }}">
-                            <hr>
-                        <div class="card-body">
-                             <button type="button" class="btn btn-custom px-md-0 px-lg-5 px-5 w-100 w-md-auto " style="background-color: #3b1f4b">
-                                <h6 class="mb-0 text-center">{{ $visitor->visit_text }}</h6>
-                            </button>
-                        </div>
-                    </div>
+    <div class="row d-flex justify-content-evenly">
+        @foreach($previousVisitors as $index => $visitor)
+        <div class="col-sm-3 sm-md-5 my-4">
+            <div class="card">
+                <img src="{{ asset('admin/img/' . $visitor->image) }}" class="" alt="Card {{ $index + 1 }}">
+                <hr>
+                <div class="card-body">
+                    <button type="button" class="btn btn-custom px-md-0 px-lg-5 px-5 w-100 w-md-auto " style="background-color: #3b1f4b">
+                        <h6 class="mb-0 text-center">{{ $visitor->visit_text }}</h6>
+                    </button>
                 </div>
-            @endforeach
+            </div>
         </div>
+        @endforeach
+    </div>
 
     </div>
 
@@ -265,19 +270,30 @@
         <h2 class="text-center mb-4">Komentar Pengunjung Hari Ini</h2>
         <div id="komen" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                @foreach ($todayVisitors as $key => $visitor)
-                @if($visitor->komentar)
+                @forelse ($todayVisitors as $key => $visitor)
                 <div class="carousel-item @if ($key == 0) active @endif">
                     <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
                         <div class="comment-card">
+                            @if ($visitor->komentar)
                             <p class="card-text">{{ $visitor->komentar }}</p>
+                            @else
+                            <p class="card-text">Tidak ada komentar dari pengunjung ini.</p>
+                            @endif
                             <p class="text-right" style="font-weight: bold;">- {{ $visitor->nama }}</p>
                         </div>
                     </div>
                 </div>
-                @endif
-                @endforeach
+                @empty
+                <div class="carousel-item active">
+                    <div class="mx-auto" style="width: 75%; box-sizing: border-box;">
+                        <div class="comment-card">
+                            <p class="card-text">Belum ada komentar untuk hari ini.</p>
+                        </div>
+                    </div>
+                </div>
+                @endforelse
             </div>
+            @if ($todayVisitors->count() > 1)
             <button class="carousel-control-prev" type="button" data-bs-target="#komen" data-bs-slide="prev">
                 <span aria-hidden="true">
                     <i style="color: #3B1F4B;" class="bx bx-chevron-left bx-lg"></i>
@@ -290,6 +306,7 @@
                 </span>
                 <span class="visually-hidden">Next</span>
             </button>
+            @endif
         </div>
     </div>
 
@@ -310,4 +327,5 @@
         crossorigin="anonymous"></script>
 
 </body>
+
 </html>

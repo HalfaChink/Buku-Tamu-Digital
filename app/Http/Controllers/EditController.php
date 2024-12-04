@@ -70,7 +70,9 @@ class EditController extends Controller
     public function dashboard()
     {
         $today = Carbon::today()->toDateString();
-        $todayVisitors = Pengunjung::whereDate('created_at', $today)->get();
+        $todayVisitors = Pengunjung::whereDate('created_at', $today)
+            ->orderBy('created_at', 'desc')
+            ->get();
         $carouselImages = Edit::all();
         $previousVisitors = Visit::all();
         return view('pages.dashboard', compact('carouselImages', 'todayVisitors', 'previousVisitors'));

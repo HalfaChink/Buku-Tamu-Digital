@@ -47,4 +47,19 @@ Masukan Detail Kunjungan
     <button class="btn me-md-2 text-light font-weight-bold" type="submit" style="background-color: rgb(59, 32, 75); margin: 20px;"><a class="text-decoration-none text-light">Submit</a></button>
   </div>
 </form>
+@if (session('success') || session('error'))
+<div id="popup-overlay" class="overlay"></div>
+<div id="popup-alert" class="popup">
+  <div class="popup-content">
+    @if (session('success'))
+    <p class="text-success">{{ session('success') }}</p>
+    @endif
+    @if (session('error'))
+    <p class="text-danger">{{ session('error') }}</p>
+    @endif
+    <button id="popup-close" class="btn btn-primary">Close</button>
+  </div>
+</div>
+@endif
+
 @endsection

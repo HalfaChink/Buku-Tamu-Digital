@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\KunjunganController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditController;
@@ -34,7 +33,6 @@ Route::middleware(['auth:admin'])->group(function () {
 });
 
 Route::post('/pengunjung/store', [UserController::class, 'store'])->name('pengunjung.store');
-Route::post('/kunjungan/store', [KunjunganController::class, 'store'])->name('kunjungan.store');
 Route::get('/chart-data', [UserController::class, 'chartData'])->name('chart.data');
 Route::post('/logoutAdmin', [AdminController::class, 'logout'])->name('logoutAdmin');
 
