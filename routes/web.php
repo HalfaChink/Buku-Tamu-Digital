@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EditController;
+use App\Http\Controllers\VisitorController;
 
 Route::post('/login', [AdminController::class, 'login'])->name('login.submit');
 
@@ -23,7 +24,7 @@ Route::middleware(['auth:admin'])->group(function () {
     Route::get('/carousel/edit', [EditController::class, 'edit'])->name('carousel.edit');
     Route::post('/adminsignup', [AdminController::class, 'signup'])->name('admin.signup');
     Route::post('/carousel/store', [EditController::class, 'store'])->name('carousel.store');
-    Route::post('/carousel/update/{id}', [EditController::class, 'update'])->name('carousel.update');
+    Route::put('/carousel/update/{id}', [EditController::class, 'update'])->name('carousel.update');
     Route::post('/visitor/store', [EditController::class, 'store'])->name('visitor.store');
     Route::delete('/carousel/destroy/{id}', [EditController::class, 'destroy'])->name('carousel.destroy');
     Route::delete('/pengunjung/{id}', [UserController::class, 'destroy'])->name('pengunjung.destroy');

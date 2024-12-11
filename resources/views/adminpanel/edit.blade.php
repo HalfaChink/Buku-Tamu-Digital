@@ -29,15 +29,15 @@ Edit
 </style>
 
 <div class="container">
+    <!-- Edit Carousel Section -->
     <h2>Edit Carousel</h2>
-
-    <!-- Display Carousel Images -->
     <div class="row mb-4">
         @foreach($carouselImages as $carousel)
         <div class="col-md-4">
             <img src="{{ asset('admin/img/' . $carousel->image) }}" class="img-thumbnail my-3" alt="carousel image">
             <form action="{{ route('carousel.update', $carousel->id) }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <input type="file" name="image" class="form-control mb-2 p-1">
                 <button type="submit" class="btn btn-primary">Update Image</button>
             </form>
@@ -57,6 +57,7 @@ Edit
         <button type="submit" class="btn btn-success">Tambahkan Image</button>
     </form>
 
+    <!-- Edit Visitor Section -->
     <h4 class="mt-5">Siapa Saja Yang Pernah Berkunjung</h4>
     <div class="row mb-4">
         @foreach($visitorData as $visitor)
@@ -81,10 +82,12 @@ Edit
     <h4>Tambah Visitor Baru</h4>
     <form action="{{ route('visitor.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
+        <input type="hidden" name="visitor" value="1">
         <input type="file" name="image" class="form-control mb-2 p-1">
         <input type="text" name="visit_text" class="form-control mb-2" placeholder="Enter visit text">
         <button type="submit" class="btn btn-success">Tambahkan Visitor</button>
     </form>
+
 </div>
 
 <script>

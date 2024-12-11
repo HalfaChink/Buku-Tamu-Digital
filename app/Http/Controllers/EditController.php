@@ -19,52 +19,88 @@ class EditController extends Controller
 
     public function store(Request $request)
     {
+        if ($request->has('carousel')) {
+            $request->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            ]);
 
-        $request->validate([
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'visit_text' => 'required|string|max:255',
-        ]);
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('admin/img'), $imageName);
 
+            Edit::create([
+                'image' => $imageName
+            ]);
 
-        $imageName = time() . '.' . $request->image->extension();
-        $request->image->move(public_path('admin/img'), $imageName);
+            return redirect()->route('carousel.edit')->with('success', 'Carousel image successfully added');
+        }
 
+        if ($request->has('visitor')) {
+            $request->validate([
+                'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+                'visit_text' => 'required|string|max:255',
+            ]);
 
-        Visit::create([
-            'image' => $imageName,
-            'visit_text' => $request->visit_text,
-        ]);
+            $imageName = time() . '.' . $request->image->extension();
+            $request->image->move(public_path('admin/img'), $imageName);
 
-        return redirect()->route('carousel.edit')->with('success', 'Visitor successfully added');
+            Visit::create([
+                'image' => $imageName,
+                'visit_text' => $request->visit_text,
+            ]);
+
+            return redirect()->route('visitor.edit')->with('success', 'Visitor successfully added');
+        }
     }
+
 
     public function update(Request $request, $id)
     {
-        $visitor = Visit::find($id);
+        if ($request->has('carousel')) {
+            $carousel = Edit::findOrFail($id);
 
+            if ($request->hasFile('image')) {
+                $imageName = time() . '.' . $request->image->extension();
+                $request->image->move(public_path('admin/img'), $imageName);
+                $carousel->image = $imageName;
+            }
 
-        if ($request->hasFile('image')) {
-            $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('admin/img'), $imageName);
-            $visitor->image = $imageName;
+            $carousel->save();
+            return redirect()->route('carousel.edit')->with('success', 'Carousel image updated successfully');
         }
 
+        if ($request->has('visitor')) {
+            $visitor = Visit::findOrFail($id);
 
-        if ($request->visit_text) {
-            $visitor->visit_text = $request->visit_text;
+            if ($request->hasFile('image')) {
+                $imageName = time() . '.' . $request->image->extension();
+                $request->image->move(public_path('admin/img'), $imageName);
+                $visitor->image = $imageName;
+            }
+
+            if ($request->visit_text) {
+                $visitor->visit_text = $request->visit_text;
+            }
+
+            $visitor->save();
+            return redirect()->route('visitor.edit')->with('success', 'Visitor updated successfully');
         }
-
-        $visitor->save();
-
-        return redirect()->route('carousel.edit')->with('success', 'Visitor updated successfully');
     }
+
+
 
     public function destroy($id)
     {
-        $visitor = Visit::find($id);
-        $visitor->delete();
+        if (request()->has('carousel')) {
+            $carousel = Edit::findOrFail($id);
+            $carousel->delete();
+            return redirect()->route('carousel.edit')->with('success', 'Carousel image deleted successfully');
+        }
 
-        return redirect()->route('carousel.edit')->with('success', 'Visitor deleted successfully');
+        if (request()->has('visitor')) {
+            $visitor = Visit::findOrFail($id);
+            $visitor->delete();
+            return redirect()->route('visitor.edit')->with('success', 'Visitor deleted successfully');
+        }
     }
 
     public function dashboard()
